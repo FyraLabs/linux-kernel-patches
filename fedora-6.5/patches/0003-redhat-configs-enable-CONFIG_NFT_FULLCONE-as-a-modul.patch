@@ -1,0 +1,23 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Paskal Sitepu <rmnscnce@ya.ru>
+Date: Fri, 15 Sep 2023 07:05:26 +0700
+Subject: [PATCH 003/297] redhat: configs: enable CONFIG_NFT_FULLCONE as a
+ module for all flavors and architectures
+
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ redhat/configs/common/generic/CONFIG_NFT_FULLCONE | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 redhat/configs/common/generic/CONFIG_NFT_FULLCONE
+
+diff --git a/redhat/configs/common/generic/CONFIG_NFT_FULLCONE b/redhat/configs/common/generic/CONFIG_NFT_FULLCONE
+new file mode 100644
+index 000000000000..c1071d09f652
+--- /dev/null
++++ b/redhat/configs/common/generic/CONFIG_NFT_FULLCONE
+@@ -0,0 +1,2 @@
++CONFIG_NFT_FULLCONE=m
++
+-- 
+2.41.0
+

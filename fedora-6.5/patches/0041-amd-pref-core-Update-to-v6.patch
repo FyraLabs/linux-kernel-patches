@@ -1,0 +1,184 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Piotr Gorski <lucjan.lucjanov@gmail.com>
+Date: Fri, 8 Sep 2023 21:19:57 +0200
+Subject: [PATCH 041/297] amd-pref-core: Update to v6
+
+Signed-off-by: Piotr Gorski <lucjan.lucjanov@gmail.com>
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ Documentation/admin-guide/pm/amd-pstate.rst | 16 ++-------------
+ drivers/cpufreq/amd-pstate.c                | 22 ++++++++-------------
+ include/linux/amd-pstate.h                  | 11 +++--------
+ 3 files changed, 13 insertions(+), 36 deletions(-)
+
+diff --git a/Documentation/admin-guide/pm/amd-pstate.rst b/Documentation/admin-guide/pm/amd-pstate.rst
+index 204f5d49d47d..b729bc6dabd8 100644
+--- a/Documentation/admin-guide/pm/amd-pstate.rst
++++ b/Documentation/admin-guide/pm/amd-pstate.rst
+@@ -301,7 +301,7 @@ efficiency frequency management method on AMD processors.
+ 
+ 
+ ``amd-pstate`` Driver Operation Modes
+-=================================
++======================================
+ 
+ ``amd_pstate`` CPPC has 3 operation modes: autonomous (active) mode,
+ non-autonomous (passive) mode and guided autonomous (guided) mode.
+@@ -391,7 +391,7 @@ Default enable ``amd-pstate`` preferred core.
+ 
+ ``amd_prefcore=disable``
+ 
+-for systems that support ``amd-pstate`` preferred core, the core rankings will
++For systems that support ``amd-pstate`` preferred core, the core rankings will
+ always be advertised by the platform. But OS can choose to ignore that via the
+ kernel parameter ``amd_prefcore=disable``.
+ 
+@@ -427,18 +427,6 @@ control its functionality at the system level.  They are located in the
+         to the operation mode represented by that string - or to be
+         unregistered in the "disable" case.
+ 
+-``hw_prefcore``
+-	Preferred core state of hardware: "supported" or "unsupported".
+-
+-	"supported"
+-		The processor and power firmware support preferred core.
+-
+-	"unsupported"
+-		The processor and power firmware don't support preferred core.
+-
+-
+-        This attribute is read-only to check the state of hardware preferred core.
+-
+ ``prefcore``
+ 	Preferred core state of the driver: "enabled" or "disabled".
+ 
+diff --git a/drivers/cpufreq/amd-pstate.c b/drivers/cpufreq/amd-pstate.c
+index 8c19e1d50d29..1c1a76b5ca58 100644
+--- a/drivers/cpufreq/amd-pstate.c
++++ b/drivers/cpufreq/amd-pstate.c
+@@ -310,7 +310,7 @@ static int pstate_init_perf(struct amd_cpudata *cpudata)
+ 	 * calculated wrongly. we take the AMD_CPPC_HIGHEST_PERF(cap1) value as
+ 	 * the default max perf.
+ 	 */
+-	if (prefcore)
++	if (hw_prefcore)
+ 		WRITE_ONCE(cpudata->highest_perf, AMD_PSTATE_PREFCORE_THRESHOLD);
+ 	else
+ 		WRITE_ONCE(cpudata->highest_perf, AMD_CPPC_HIGHEST_PERF(cap1));
+@@ -318,7 +318,7 @@ static int pstate_init_perf(struct amd_cpudata *cpudata)
+ 	WRITE_ONCE(cpudata->nominal_perf, AMD_CPPC_NOMINAL_PERF(cap1));
+ 	WRITE_ONCE(cpudata->lowest_nonlinear_perf, AMD_CPPC_LOWNONLIN_PERF(cap1));
+ 	WRITE_ONCE(cpudata->lowest_perf, AMD_CPPC_LOWEST_PERF(cap1));
+-	WRITE_ONCE(cpudata->cppc_highest_perf, AMD_CPPC_HIGHEST_PERF(cap1));
++	WRITE_ONCE(cpudata->prefcore_ranking, AMD_CPPC_HIGHEST_PERF(cap1));
+ 
+ 	return 0;
+ }
+@@ -331,7 +331,7 @@ static int cppc_init_perf(struct amd_cpudata *cpudata)
+ 	if (ret)
+ 		return ret;
+ 
+-	if (prefcore)
++	if (hw_prefcore)
+ 		WRITE_ONCE(cpudata->highest_perf, AMD_PSTATE_PREFCORE_THRESHOLD);
+ 	else
+ 		WRITE_ONCE(cpudata->highest_perf, cppc_perf.highest_perf);
+@@ -340,7 +340,7 @@ static int cppc_init_perf(struct amd_cpudata *cpudata)
+ 	WRITE_ONCE(cpudata->lowest_nonlinear_perf,
+ 		   cppc_perf.lowest_nonlinear_perf);
+ 	WRITE_ONCE(cpudata->lowest_perf, cppc_perf.lowest_perf);
+-	WRITE_ONCE(cpudata->cppc_highest_perf, cppc_perf.highest_perf);
++	WRITE_ONCE(cpudata->prefcore_ranking, cppc_perf.highest_perf);
+ 
+ 	if (cppc_state == AMD_PSTATE_ACTIVE)
+ 		return 0;
+@@ -735,6 +735,7 @@ static void amd_pstate_init_prefcore(void)
+ 
+ 		/* check if CPPC preferred core feature is enabled*/
+ 		if (highest_perf == AMD_PSTATE_MAX_CPPC_PERF) {
++			pr_debug("AMD CPPC preferred core is unsupported!\n");
+ 			hw_prefcore = false;
+ 			prefcore = false;
+ 			return;
+@@ -768,10 +769,10 @@ static void amd_pstate_update_highest_perf(unsigned int cpu)
+ 	policy = cpufreq_cpu_get(cpu);
+ 	cpudata = policy->driver_data;
+ 	cur_high = highest_perf;
+-	prev_high = READ_ONCE(cpudata->cppc_highest_perf);
++	prev_high = READ_ONCE(cpudata->prefcore_ranking);
+ 
+ 	if (prev_high != cur_high) {
+-		WRITE_ONCE(cpudata->cppc_highest_perf, cur_high);
++		WRITE_ONCE(cpudata->prefcore_ranking, cur_high);
+ 		sched_set_itmt_core_prio(cur_high, cpu);
+ 	}
+ 
+@@ -942,7 +943,7 @@ static ssize_t show_amd_pstate_highest_perf(struct cpufreq_policy *policy,
+ 	u32 perf;
+ 	struct amd_cpudata *cpudata = policy->driver_data;
+ 
+-	perf = READ_ONCE(cpudata->cppc_highest_perf);
++	perf = READ_ONCE(cpudata->prefcore_ranking);
+ 
+ 	return sysfs_emit(buf, "%u\n", perf);
+ }
+@@ -1139,12 +1140,6 @@ static ssize_t status_store(struct device *a, struct device_attribute *b,
+ 	return ret < 0 ? ret : count;
+ }
+ 
+-static ssize_t hw_prefcore_show(struct device *dev,
+-				struct device_attribute *attr, char *buf)
+-{
+-	return sysfs_emit(buf, "%s\n", hw_prefcore ? "supported" : "unsupported");
+-}
+-
+ static ssize_t prefcore_show(struct device *dev,
+ 			     struct device_attribute *attr, char *buf)
+ {
+@@ -1158,7 +1153,6 @@ cpufreq_freq_attr_ro(amd_pstate_highest_perf);
+ cpufreq_freq_attr_rw(energy_performance_preference);
+ cpufreq_freq_attr_ro(energy_performance_available_preferences);
+ static DEVICE_ATTR_RW(status);
+-static DEVICE_ATTR_RO(hw_prefcore);
+ static DEVICE_ATTR_RO(prefcore);
+ 
+ static struct freq_attr *amd_pstate_attr[] = {
+diff --git a/include/linux/amd-pstate.h b/include/linux/amd-pstate.h
+index 2159fd5693fe..030a6a97c2b9 100644
+--- a/include/linux/amd-pstate.h
++++ b/include/linux/amd-pstate.h
+@@ -31,11 +31,6 @@ struct amd_aperf_mperf {
+ 	u64 mperf;
+ 	u64 tsc;
+ };
+-	/* For platforms that do not support the preferred core feature, the
+-	 * highest_pef may be configured with 166 or 255, to avoid max frequency
+-	 * calculated wrongly. we take the AMD_CPPC_HIGHEST_PERF(cap1) value as
+-	 * the default max perf.
+-	 */
+ 
+ /**
+  * struct amd_cpudata - private CPU data for AMD P-State
+@@ -52,8 +47,8 @@ struct amd_aperf_mperf {
+  * @lowest_nonlinear_perf: the lowest performance level at which nonlinear power
+  *			   savings are achieved
+  * @lowest_perf: the absolute lowest performance level of the processor
+- * @cppc_highest_perf: the maximum performance an individual processor may reach,
+- *		  assuming ideal conditions
++ * @prefcore_ranking: the preferred core ranking, the higher value indicates a higher
++ * 		  priority.
+  * @max_freq: the frequency that mapped to highest_perf
+  * @min_freq: the frequency that mapped to lowest_perf
+  * @nominal_freq: the frequency that mapped to nominal_perf
+@@ -80,7 +75,7 @@ struct amd_cpudata {
+ 	u32	nominal_perf;
+ 	u32	lowest_nonlinear_perf;
+ 	u32	lowest_perf;
+-	u32     cppc_highest_perf;
++	u32     prefcore_ranking;
+ 
+ 	u32	max_freq;
+ 	u32	min_freq;
+-- 
+2.41.0
+

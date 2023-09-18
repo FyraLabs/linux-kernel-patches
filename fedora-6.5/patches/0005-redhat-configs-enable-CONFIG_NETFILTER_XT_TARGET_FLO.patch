@@ -1,0 +1,24 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Paskal Sitepu <rmnscnce@ya.ru>
+Date: Fri, 15 Sep 2023 07:08:58 +0700
+Subject: [PATCH 005/297] redhat: configs: enable
+ CONFIG_NETFILTER_XT_TARGET_FLOWOFFLOAD as a module for all flavors and
+ architectures
+
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ .../common/generic/CONFIG_NETFILTER_XT_TARGET_FLOWOFFLOAD       | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 redhat/configs/common/generic/CONFIG_NETFILTER_XT_TARGET_FLOWOFFLOAD
+
+diff --git a/redhat/configs/common/generic/CONFIG_NETFILTER_XT_TARGET_FLOWOFFLOAD b/redhat/configs/common/generic/CONFIG_NETFILTER_XT_TARGET_FLOWOFFLOAD
+new file mode 100644
+index 000000000000..42e1525b99d7
+--- /dev/null
++++ b/redhat/configs/common/generic/CONFIG_NETFILTER_XT_TARGET_FLOWOFFLOAD
+@@ -0,0 +1,2 @@
++CONFIG_NETFILTER_XT_TARGET_FLOWOFFLOAD=m
++
+-- 
+2.41.0
+

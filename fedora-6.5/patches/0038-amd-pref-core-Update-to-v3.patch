@@ -1,0 +1,46 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Piotr Gorski <lucjan.lucjanov@gmail.com>
+Date: Thu, 24 Aug 2023 11:22:06 +0200
+Subject: [PATCH 038/297] amd-pref-core: Update to v3
+
+Signed-off-by: Piotr Gorski <lucjan.lucjanov@gmail.com>
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ Documentation/admin-guide/pm/amd-pstate.rst | 5 ++---
+ arch/x86/Kconfig                            | 4 ++--
+ 2 files changed, 4 insertions(+), 5 deletions(-)
+
+diff --git a/Documentation/admin-guide/pm/amd-pstate.rst b/Documentation/admin-guide/pm/amd-pstate.rst
+index ef2b69935311..2369b58a3521 100644
+--- a/Documentation/admin-guide/pm/amd-pstate.rst
++++ b/Documentation/admin-guide/pm/amd-pstate.rst
+@@ -391,9 +391,8 @@ Default enable ``AMD Pstate Preferred Core``.
+ 
+ ``amd_prefcore=disable``
+ 
+-If ``amd_prefcore=disable`` is passed to kernel command line option
+-then disable ``AMD Pstate Preferred Core`` if platform can support
+-the Preferred Core feature.
++``AMD Pstate Preferred Core`` will be enabled if the underlying platform
++supports it. It can be disabled by kernerl parameter: ``amd_prefcore=disable``.
+ 
+ User Space Interface in ``sysfs`` - General
+ ===========================================
+diff --git a/arch/x86/Kconfig b/arch/x86/Kconfig
+index 03322d2840fa..16df141bd8a2 100644
+--- a/arch/x86/Kconfig
++++ b/arch/x86/Kconfig
+@@ -1053,8 +1053,8 @@ config SCHED_MC
+ config SCHED_MC_PRIO
+ 	bool "CPU core priorities scheduler support"
+ 	depends on SCHED_MC
+-	select X86_INTEL_PSTATE
+-	select X86_AMD_PSTATE
++	select X86_INTEL_PSTATE if CPU_SUP_INTEL
++	select X86_AMD_PSTATE if CPU_SUP_AMD
+ 	select CPU_FREQ
+ 	default y
+ 	help
+-- 
+2.41.0
+

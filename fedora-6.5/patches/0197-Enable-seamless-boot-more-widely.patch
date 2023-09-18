@@ -1,0 +1,44 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Mario Limonciello <mario.limonciello@amd.com>
+Date: Wed, 13 Sep 2023 12:14:51 -0500
+Subject: [PATCH 197/297] Enable seamless boot more widely
+
+Seamless boot allows keeping the content on the framebuffer from pre-boot
+so the screen doesn't get "painted black" during boot process.
+
+Ideally the flow looks like:
+* UEFI F/W posts vendor logo
+* GRUB doesn't show anything, but silently continues
+* Plymouth starts and adds OS logo to bottom and spinner
+* Simple DRM loads, no mode changes
+* amdgpu loads, no mode changes
+* Spinner keeps spinning
+* GDM starts up
+
+Previously this was only enabled on Van Gogh, but this series enables
+the functionality more widely onto DCN3.0+.
+
+This also introduces a kernel module parameter that to easily force it
+enabled on other ASICs too, which may be useful to adjust policy.
+
+Mario Limonciello (4):
+  drm/amd: Drop special case for yellow carp without discovery
+  drm/amd: Move seamless boot check out of display
+  drm/amd: Add a module parameter for seamless boot
+  drm/amd: Enable seamless boot by default on newer ASICs
+
+ drivers/gpu/drm/amd/amdgpu/amdgpu.h           |  2 ++
+ drivers/gpu/drm/amd/amdgpu/amdgpu_device.c    | 28 +++++++++++++++++++
+ drivers/gpu/drm/amd/amdgpu/amdgpu_drv.c       |  8 ++++++
+ drivers/gpu/drm/amd/amdgpu/amdgpu_gmc.c       |  6 ----
+ .../gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.c | 23 +--------------
+ .../gpu/drm/amd/display/amdgpu_dm/amdgpu_dm.h |  2 --
+ 6 files changed, 39 insertions(+), 30 deletions(-)
+
+--
+2.34.1
+
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+-- 
+2.41.0
+

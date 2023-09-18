@@ -1,0 +1,33 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Paskal Sitepu <rmnscnce@ya.ru>
+Date: Fri, 15 Sep 2023 02:45:20 +0700
+Subject: [PATCH 153/297] redhat: configs: enable CONFIG_SPADFS_FS as a module
+ except for s390x
+
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ redhat/configs/common/generic/CONFIG_SPADFS_FS       | 2 ++
+ redhat/configs/common/generic/s390x/CONFIG_SPADFS_FS | 2 ++
+ 2 files changed, 4 insertions(+)
+ create mode 100644 redhat/configs/common/generic/CONFIG_SPADFS_FS
+ create mode 100644 redhat/configs/common/generic/s390x/CONFIG_SPADFS_FS
+
+diff --git a/redhat/configs/common/generic/CONFIG_SPADFS_FS b/redhat/configs/common/generic/CONFIG_SPADFS_FS
+new file mode 100644
+index 000000000000..8709d4f17f87
+--- /dev/null
++++ b/redhat/configs/common/generic/CONFIG_SPADFS_FS
+@@ -0,0 +1,2 @@
++CONFIG_SPADFS_FS=m
++
+diff --git a/redhat/configs/common/generic/s390x/CONFIG_SPADFS_FS b/redhat/configs/common/generic/s390x/CONFIG_SPADFS_FS
+new file mode 100644
+index 000000000000..55a550d4dc7f
+--- /dev/null
++++ b/redhat/configs/common/generic/s390x/CONFIG_SPADFS_FS
+@@ -0,0 +1,2 @@
++# CONFIG_SPADFS_FS is not set
++
+-- 
+2.41.0
+

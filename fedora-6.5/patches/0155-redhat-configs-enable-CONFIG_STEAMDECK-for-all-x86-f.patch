@@ -1,0 +1,32 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Paskal Sitepu <rmnscnce@ya.ru>
+Date: Fri, 15 Sep 2023 03:04:37 +0700
+Subject: [PATCH 155/297] redhat: configs: enable CONFIG_STEAMDECK for all x86
+ flavors
+
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ redhat/configs/common/generic/CONFIG_STEAMDECK     | 1 +
+ redhat/configs/common/generic/x86/CONFIG_STEAMDECK | 2 ++
+ 2 files changed, 3 insertions(+)
+ create mode 100644 redhat/configs/common/generic/CONFIG_STEAMDECK
+ create mode 100644 redhat/configs/common/generic/x86/CONFIG_STEAMDECK
+
+diff --git a/redhat/configs/common/generic/CONFIG_STEAMDECK b/redhat/configs/common/generic/CONFIG_STEAMDECK
+new file mode 100644
+index 000000000000..480b5596eb67
+--- /dev/null
++++ b/redhat/configs/common/generic/CONFIG_STEAMDECK
+@@ -0,0 +1 @@
++# CONFIG_STEAMDECK is not set
+diff --git a/redhat/configs/common/generic/x86/CONFIG_STEAMDECK b/redhat/configs/common/generic/x86/CONFIG_STEAMDECK
+new file mode 100644
+index 000000000000..c7e584cd28ca
+--- /dev/null
++++ b/redhat/configs/common/generic/x86/CONFIG_STEAMDECK
+@@ -0,0 +1,2 @@
++CONFIG_STEAMDECK=y
++
+-- 
+2.41.0
+

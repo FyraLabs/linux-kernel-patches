@@ -1,0 +1,33 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Paskal Sitepu <rmnscnce@ya.ru>
+Date: Fri, 15 Sep 2023 04:01:33 +0700
+Subject: [PATCH 180/297] redhat: configs: enable CONFIG_HID_APPLE_IBRIDGE as a
+ module for all x86 flavors
+
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ redhat/configs/common/generic/CONFIG_HID_APPLE_IBRIDGE     | 2 ++
+ redhat/configs/common/generic/x86/CONFIG_HID_APPLE_IBRIDGE | 2 ++
+ 2 files changed, 4 insertions(+)
+ create mode 100644 redhat/configs/common/generic/CONFIG_HID_APPLE_IBRIDGE
+ create mode 100644 redhat/configs/common/generic/x86/CONFIG_HID_APPLE_IBRIDGE
+
+diff --git a/redhat/configs/common/generic/CONFIG_HID_APPLE_IBRIDGE b/redhat/configs/common/generic/CONFIG_HID_APPLE_IBRIDGE
+new file mode 100644
+index 000000000000..e44ea8e4936d
+--- /dev/null
++++ b/redhat/configs/common/generic/CONFIG_HID_APPLE_IBRIDGE
+@@ -0,0 +1,2 @@
++# CONFIG_HID_APPLE_IBRIDGE is not set
++
+diff --git a/redhat/configs/common/generic/x86/CONFIG_HID_APPLE_IBRIDGE b/redhat/configs/common/generic/x86/CONFIG_HID_APPLE_IBRIDGE
+new file mode 100644
+index 000000000000..f7551bf41ea5
+--- /dev/null
++++ b/redhat/configs/common/generic/x86/CONFIG_HID_APPLE_IBRIDGE
+@@ -0,0 +1,2 @@
++CONFIG_HID_APPLE_IBRIDGE=m
++
+-- 
+2.41.0
+

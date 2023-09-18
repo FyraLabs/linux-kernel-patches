@@ -1,0 +1,29 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Paskal Sitepu <rmnscnce@ya.ru>
+Date: Mon, 18 Sep 2023 03:43:13 +0700
+Subject: [PATCH 239/297] fs: binfmt_elf: Place libraries right below the
+ binary for PIEs
+
+This helps code locality
+
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ fs/binfmt_elf.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/fs/binfmt_elf.c b/fs/binfmt_elf.c
+index 7b3d2d491407..e1b8673960e0 100644
+--- a/fs/binfmt_elf.c
++++ b/fs/binfmt_elf.c
+@@ -1296,6 +1296,8 @@ static int load_elf_binary(struct linux_binprm *bprm)
+ 	mm = current->mm;
+ 	mm->end_code = end_code;
+ 	mm->start_code = start_code;
++	if (start_code >= ELF_ET_DYN_BASE)
++		mm->mmap_base = start_code;
+ 	mm->start_data = start_data;
+ 	mm->end_data = end_data;
+ 	mm->start_stack = bprm->p;
+-- 
+2.41.0
+
