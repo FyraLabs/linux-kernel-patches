@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Paul Pawlowski <paul@mrarm.io>
 Date: Sun, 17 Nov 2019 23:11:56 +0100
-Subject: [PATCH 187/297] applesmc: make io port base addr dynamic
+Subject: [PATCH 187/384] applesmc: make io port base addr dynamic
 
 This change makes the port base runtime configurable.
 The reason why this change is made is so that when we switch to an

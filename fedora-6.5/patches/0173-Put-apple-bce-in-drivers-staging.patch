@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Redecorating <69827514+Redecorating@users.noreply.github.com>
 Date: Mon, 7 Nov 2022 14:56:34 +0530
-Subject: [PATCH 173/297] Put apple-bce in drivers/staging
+Subject: [PATCH 173/384] Put apple-bce in drivers/staging
 
 Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
 ---

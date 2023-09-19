@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Qu Wenruo <wqu@suse.com>
 Date: Thu, 3 Aug 2023 14:33:33 +0800
-Subject: [PATCH 148/297] btrfs: scrub: move write back of repaired sectors to
+Subject: [PATCH 148/384] btrfs: scrub: move write back of repaired sectors to
  scrub_stripe_read_repair_worker()
 
 Currently the scrub_stripe_read_repair_worker() only does reads to

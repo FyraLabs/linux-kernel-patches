@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Paul Pawlowski <paul@mrarm.io>
 Date: Sun, 17 Nov 2019 23:12:14 +0100
-Subject: [PATCH 189/297] applesmc: key interface wrappers
+Subject: [PATCH 189/384] applesmc: key interface wrappers
 
 This change replaces the read_smc and write_smc
 methods with wrappers, additionally removing the

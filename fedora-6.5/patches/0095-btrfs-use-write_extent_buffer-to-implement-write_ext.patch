@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Qu Wenruo <wqu@suse.com>
 Date: Sat, 15 Jul 2023 19:08:30 +0800
-Subject: [PATCH 095/297] btrfs: use write_extent_buffer() to implement
+Subject: [PATCH 095/384] btrfs: use write_extent_buffer() to implement
  write_extent_buffer_*id()
 
 Helpers write_extent_buffer_chunk_tree_uuid() and

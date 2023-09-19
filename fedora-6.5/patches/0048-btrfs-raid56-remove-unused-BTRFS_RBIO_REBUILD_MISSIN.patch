@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Qu Wenruo <wqu@suse.com>
 Date: Wed, 28 Jun 2023 16:11:15 +0800
-Subject: [PATCH 048/297] btrfs: raid56: remove unused
+Subject: [PATCH 048/384] btrfs: raid56: remove unused
  BTRFS_RBIO_REBUILD_MISSING
 
 Commit aca43fe839e4 ("btrfs: remove unused raid56 functions which were

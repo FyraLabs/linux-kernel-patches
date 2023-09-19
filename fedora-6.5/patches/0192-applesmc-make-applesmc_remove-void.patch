@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Orlando Chamberlain <orlandoch.dev@gmail.com>
 Date: Tue, 24 Jan 2023 15:46:48 +1100
-Subject: [PATCH 192/297] applesmc: make applesmc_remove void
+Subject: [PATCH 192/384] applesmc: make applesmc_remove void
 
 for linux6.2 compatibility
 

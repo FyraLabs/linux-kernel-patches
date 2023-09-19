@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Christoph Hellwig <hch@lst.de>
 Date: Mon, 24 Jul 2023 07:22:41 -0700
-Subject: [PATCH 134/297] btrfs: move the !zoned assert into run_delalloc_cow
+Subject: [PATCH 134/384] btrfs: move the !zoned assert into run_delalloc_cow
 
 Having the assert in the actual helper documents the pre-conditions
 much better than having it in the caller, so move it.

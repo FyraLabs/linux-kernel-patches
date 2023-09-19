@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Naohiro Aota <naohiro.aota@wdc.com>
 Date: Tue, 8 Aug 2023 01:12:38 +0900
-Subject: [PATCH 124/297] btrfs: zoned: no longer count fresh BG region as zone
+Subject: [PATCH 124/384] btrfs: zoned: no longer count fresh BG region as zone
  unusable
 
 Now that we switched to write time activation, we no longer need to (and

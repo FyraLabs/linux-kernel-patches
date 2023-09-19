@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Qu Wenruo <wqu@suse.com>
 Date: Tue, 20 Jun 2023 15:06:05 +0800
-Subject: [PATCH 050/297] btrfs: tracepoints: simplify raid56 events
+Subject: [PATCH 050/384] btrfs: tracepoints: simplify raid56 events
 
 After commit 6bfd0133bee2 ("btrfs: raid56: switch scrub path to use a
 single function"), the raid56 implementation no longer uses different

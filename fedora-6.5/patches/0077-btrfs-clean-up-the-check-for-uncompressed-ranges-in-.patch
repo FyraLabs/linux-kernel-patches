@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Christoph Hellwig <hch@lst.de>
 Date: Wed, 28 Jun 2023 17:31:32 +0200
-Subject: [PATCH 077/297] btrfs: clean up the check for uncompressed ranges in
+Subject: [PATCH 077/384] btrfs: clean up the check for uncompressed ranges in
  submit_one_async_extent
 
 Instead of checking for a NULL !pages and explaining this with a cryptic

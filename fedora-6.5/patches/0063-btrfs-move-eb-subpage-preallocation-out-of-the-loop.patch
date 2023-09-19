@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Qu Wenruo <wqu@suse.com>
 Date: Sun, 9 Jul 2023 15:08:18 +0800
-Subject: [PATCH 063/297] btrfs: move eb subpage preallocation out of the loop
+Subject: [PATCH 063/384] btrfs: move eb subpage preallocation out of the loop
 
 Initially we preallocate btrfs_subpage structure in the main loop of
 alloc_extent_buffer().

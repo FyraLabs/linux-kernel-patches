@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Piotr Gorski <lucjan.lucjanov@gmail.com>
 Date: Wed, 6 Sep 2023 13:28:20 +0200
-Subject: [PATCH 040/297] amd-pref-core: Update to v5
+Subject: [PATCH 040/384] amd-pref-core: Update to v5
 
 Signed-off-by: Piotr Gorski <lucjan.lucjanov@gmail.com>
 Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>

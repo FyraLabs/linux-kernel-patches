@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Naohiro Aota <naohiro.aota@wdc.com>
 Date: Tue, 8 Aug 2023 01:12:33 +0900
-Subject: [PATCH 119/297] btrfs: zoned: return int from
+Subject: [PATCH 119/384] btrfs: zoned: return int from
  btrfs_check_meta_write_pointer
 
 Now that we have writeback_control passed to

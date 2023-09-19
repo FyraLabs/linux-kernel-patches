@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Naohiro Aota <naohiro.aota@wdc.com>
 Date: Tue, 8 Aug 2023 01:12:32 +0900
-Subject: [PATCH 118/297] btrfs: zoned: introduce block group context to
+Subject: [PATCH 118/384] btrfs: zoned: introduce block group context to
  btrfs_eb_write_context
 
 For metadata write out on the zoned mode, we call

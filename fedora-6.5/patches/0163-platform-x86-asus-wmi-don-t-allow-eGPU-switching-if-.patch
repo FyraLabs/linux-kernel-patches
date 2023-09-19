@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: "Luke D. Jones" <luke@ljones.dev>
 Date: Tue, 20 Jun 2023 12:26:51 +1200
-Subject: [PATCH 163/297] platform/x86: asus-wmi: don't allow eGPU switching if
+Subject: [PATCH 163/384] platform/x86: asus-wmi: don't allow eGPU switching if
  eGPU not connected
 
 Check the ASUS_WMI_DEVID_EGPU_CONNECTED method for eGPU connection

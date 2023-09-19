@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Colin Ian King <colin.i.king@gmail.com>
 Date: Wed, 21 Jun 2023 14:09:37 +0100
-Subject: [PATCH 045/297] btrfs: scrub: remove redundant division of stripe_nr
+Subject: [PATCH 045/384] btrfs: scrub: remove redundant division of stripe_nr
 
 Variable stripe_nr is being divided by map->num_stripes however the
 result is never read. The division and assignment are redundant and

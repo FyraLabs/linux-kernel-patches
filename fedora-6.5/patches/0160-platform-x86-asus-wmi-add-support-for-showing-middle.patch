@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: "Luke D. Jones" <luke@ljones.dev>
 Date: Sun, 4 Jun 2023 19:07:31 +1200
-Subject: [PATCH 160/297] platform/x86: asus-wmi: add support for showing
+Subject: [PATCH 160/384] platform/x86: asus-wmi: add support for showing
  middle fan RPM
 
 Some newer ASUS ROG laptops now have a middle/center fan in addition

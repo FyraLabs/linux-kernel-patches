@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Meng Li <li.meng@amd.com>
 Date: Tue, 15 Aug 2023 14:15:41 +0800
-Subject: [PATCH 032/297] acpi: cppc: Add get the highest performance cppc
+Subject: [PATCH 032/384] acpi: cppc: Add get the highest performance cppc
  control
 
 Add support for getting the highest performance to the

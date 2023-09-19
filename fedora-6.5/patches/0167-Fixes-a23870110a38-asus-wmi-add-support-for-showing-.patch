@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: "Luke D. Jones" <luke@ljones.dev>
 Date: Sun, 23 Jul 2023 21:29:11 +1200
-Subject: [PATCH 167/297] Fixes: a23870110a38 ("asus-wmi: add support for
+Subject: [PATCH 167/384] Fixes: a23870110a38 ("asus-wmi: add support for
  showing middle fan RPM")
 
 After the addition of the mid fan custom curve functionality various

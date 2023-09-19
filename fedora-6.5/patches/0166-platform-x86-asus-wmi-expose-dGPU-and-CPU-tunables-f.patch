@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: "Luke D. Jones" <luke@ljones.dev>
 Date: Tue, 6 Jun 2023 15:05:01 +1200
-Subject: [PATCH 166/297] platform/x86: asus-wmi: expose dGPU and CPU tunables
+Subject: [PATCH 166/384] platform/x86: asus-wmi: expose dGPU and CPU tunables
  for ROG
 
 Expose various CPU and dGPU tunables that are available on many ASUS

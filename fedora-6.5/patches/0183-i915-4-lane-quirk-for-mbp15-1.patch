@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Orlando Chamberlain <orlandoch.dev@gmail.com>
 Date: Sat, 18 Feb 2023 23:05:05 +1100
-Subject: [PATCH 183/297] i915: 4 lane quirk for mbp15,1
+Subject: [PATCH 183/384] i915: 4 lane quirk for mbp15,1
 
 Needed to use iGPU when dGPU was boot GPU
 

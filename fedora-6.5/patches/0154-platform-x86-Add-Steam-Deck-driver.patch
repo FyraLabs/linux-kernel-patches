@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Andrey Smirnov <andrew.smirnov@gmail.com>
 Date: Sat, 5 Feb 2022 18:20:23 -0800
-Subject: [PATCH 154/297] platform/x86: Add Steam Deck driver
+Subject: [PATCH 154/384] platform/x86: Add Steam Deck driver
 
 Add a driver exposing various bits and pieces of functionality
 provided by Steam Deck specific VLV0100 device presented by EC

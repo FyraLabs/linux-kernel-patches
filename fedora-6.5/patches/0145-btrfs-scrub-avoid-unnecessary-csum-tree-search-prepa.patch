@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Qu Wenruo <wqu@suse.com>
 Date: Thu, 3 Aug 2023 14:33:30 +0800
-Subject: [PATCH 145/297] btrfs: scrub: avoid unnecessary csum tree search
+Subject: [PATCH 145/384] btrfs: scrub: avoid unnecessary csum tree search
  preparing stripes
 
 One of the bottleneck of the new scrub code is the extra csum tree

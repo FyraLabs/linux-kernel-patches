@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Qu Wenruo <wqu@suse.com>
 Date: Sat, 15 Jul 2023 19:08:32 +0800
-Subject: [PATCH 097/297] btrfs: copy all pages at once at the end of
+Subject: [PATCH 097/384] btrfs: copy all pages at once at the end of
  btrfs_clone_extent_buffer()
 
 btrfs_clone_extent_buffer() calls copy_page() at each iteration but we

@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Qu Wenruo <wqu@suse.com>
 Date: Wed, 9 Aug 2023 15:08:21 +0800
-Subject: [PATCH 127/297] btrfs: handle errors properly in
+Subject: [PATCH 127/384] btrfs: handle errors properly in
  update_inline_extent_backref()
 
 [PROBLEM]

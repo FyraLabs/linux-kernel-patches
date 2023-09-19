@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Paskal Sitepu <rmnscnce@ya.ru>
 Date: Fri, 15 Sep 2023 07:05:26 +0700
-Subject: [PATCH 003/297] redhat: configs: enable CONFIG_NFT_FULLCONE as a
+Subject: [PATCH 003/384] redhat: configs: enable CONFIG_NFT_FULLCONE as a
  module for all flavors and architectures
 
 Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>

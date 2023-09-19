@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Orlando Chamberlain <orlandoch.dev@gmail.com>
 Date: Fri, 10 Feb 2023 23:14:31 +1100
-Subject: [PATCH 177/297] HID: hid-apple-magic-backlight: Add driver for
+Subject: [PATCH 177/384] HID: hid-apple-magic-backlight: Add driver for
  keyboard backlight on internal Magic Keyboards
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8

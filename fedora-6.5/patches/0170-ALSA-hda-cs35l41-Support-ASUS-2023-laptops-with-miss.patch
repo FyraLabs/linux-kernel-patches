@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: "Luke D. Jones" <luke@ljones.dev>
 Date: Wed, 23 Aug 2023 11:05:59 +1200
-Subject: [PATCH 170/297] ALSA: hda: cs35l41: Support ASUS 2023 laptops with
+Subject: [PATCH 170/384] ALSA: hda: cs35l41: Support ASUS 2023 laptops with
  missing DSD
 
 Support adding the missing DSD properties required  for ASUS ROG 2023

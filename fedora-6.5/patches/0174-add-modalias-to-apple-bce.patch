@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Redecorating <69827514+Redecorating@users.noreply.github.com>
 Date: Fri, 24 Dec 2021 18:12:25 +1100
-Subject: [PATCH 174/297] add modalias to apple-bce
+Subject: [PATCH 174/384] add modalias to apple-bce
 
 Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
 ---

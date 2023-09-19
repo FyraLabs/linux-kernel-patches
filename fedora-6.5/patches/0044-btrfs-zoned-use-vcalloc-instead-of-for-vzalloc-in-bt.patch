@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Julia Lawall <Julia.Lawall@inria.fr>
 Date: Fri, 23 Jun 2023 23:14:43 +0200
-Subject: [PATCH 044/297] btrfs: zoned: use vcalloc instead of for vzalloc in
+Subject: [PATCH 044/384] btrfs: zoned: use vcalloc instead of for vzalloc in
  btrfs_get_dev_zone_info
 
 Use vcalloc that checks potential multiplication overflows.  The changes

@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: "Luke D. Jones" <luke@ljones.dev>
 Date: Sun, 4 Jun 2023 20:21:10 +1200
-Subject: [PATCH 165/297] platform/x86: asus-wmi: support setting mini-LED mode
+Subject: [PATCH 165/384] platform/x86: asus-wmi: support setting mini-LED mode
 
 Support changing the mini-LED mode on some of the newer ASUS laptops.
 

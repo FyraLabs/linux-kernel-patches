@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Christoph Hellwig <hch@lst.de>
 Date: Wed, 28 Jun 2023 17:31:38 +0200
-Subject: [PATCH 083/297] btrfs: use a separate label for the incompressible
+Subject: [PATCH 083/384] btrfs: use a separate label for the incompressible
  case in compress_file_range
 
 compress_file_range can fail to compress either because of resource or

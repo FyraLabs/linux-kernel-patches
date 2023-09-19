@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Naohiro Aota <naohiro.aota@wdc.com>
 Date: Tue, 8 Aug 2023 01:12:37 +0900
-Subject: [PATCH 123/297] btrfs: zoned: activate metadata block group on write
+Subject: [PATCH 123/384] btrfs: zoned: activate metadata block group on write
  time
 
 In the current implementation, block groups are activated at reservation

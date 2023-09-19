@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Piotr Gorski <lucjan.lucjanov@gmail.com>
 Date: Fri, 1 Sep 2023 13:19:59 +0200
-Subject: [PATCH 152/297] spadfs-6.5: merge v1.0.17
+Subject: [PATCH 152/384] spadfs-6.5: merge v1.0.17
 
 Signed-off-by: Piotr Gorski <lucjan.lucjanov@gmail.com>
 Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>

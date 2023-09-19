@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: "Luke D. Jones" <luke@ljones.dev>
 Date: Tue, 20 Jun 2023 12:48:31 +1200
-Subject: [PATCH 164/297] platform/x86: asus-wmi: add safety checks to gpu
+Subject: [PATCH 164/384] platform/x86: asus-wmi: add safety checks to gpu
  switching
 
 Add safety checking to dgpu_disable, egpu_enable, gpu_mux_mode.

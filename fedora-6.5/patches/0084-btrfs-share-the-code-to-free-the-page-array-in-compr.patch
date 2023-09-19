@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Christoph Hellwig <hch@lst.de>
 Date: Wed, 28 Jun 2023 17:31:39 +0200
-Subject: [PATCH 084/297] btrfs: share the code to free the page array in
+Subject: [PATCH 084/384] btrfs: share the code to free the page array in
  compress_file_range
 
 compress_file_range has two code blocks to free the page array for the

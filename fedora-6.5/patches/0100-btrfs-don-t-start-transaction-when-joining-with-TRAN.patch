@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Filipe Manana <fdmanana@suse.com>
 Date: Wed, 26 Jul 2023 16:56:57 +0100
-Subject: [PATCH 100/297] btrfs: don't start transaction when joining with
+Subject: [PATCH 100/384] btrfs: don't start transaction when joining with
  TRANS_JOIN_NOSTART
 
 When joining a transaction with TRANS_JOIN_NOSTART, if we don't find a

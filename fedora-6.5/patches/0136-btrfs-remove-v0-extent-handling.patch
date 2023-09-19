@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Qu Wenruo <wqu@suse.com>
 Date: Fri, 11 Aug 2023 19:02:11 +0800
-Subject: [PATCH 136/297] btrfs: remove v0 extent handling
+Subject: [PATCH 136/384] btrfs: remove v0 extent handling
 
 The v0 extent item has been deprecated for a long time, and we don't have
 any report from the community either.

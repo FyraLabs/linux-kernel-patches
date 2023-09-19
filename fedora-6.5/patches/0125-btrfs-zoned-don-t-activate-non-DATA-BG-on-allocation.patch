@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Naohiro Aota <naohiro.aota@wdc.com>
 Date: Tue, 8 Aug 2023 01:12:39 +0900
-Subject: [PATCH 125/297] btrfs: zoned: don't activate non-DATA BG on
+Subject: [PATCH 125/384] btrfs: zoned: don't activate non-DATA BG on
  allocation
 
 Now that a non-DATA block group is activated at write time, don't

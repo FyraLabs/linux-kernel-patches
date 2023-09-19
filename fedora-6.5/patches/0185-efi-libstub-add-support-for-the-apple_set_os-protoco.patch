@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Kerem Karabay <kekrby@gmail.com>
 Date: Thu, 5 Jan 2023 21:07:54 +0300
-Subject: [PATCH 185/297] efi: libstub: add support for the apple_set_os
+Subject: [PATCH 185/384] efi: libstub: add support for the apple_set_os
  protocol
 
 On dual GPU EFI Macs, the EFI stub needs to report that it is booting

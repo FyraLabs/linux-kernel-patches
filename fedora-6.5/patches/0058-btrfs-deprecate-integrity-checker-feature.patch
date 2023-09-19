@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Qu Wenruo <wqu@suse.com>
 Date: Mon, 26 Jun 2023 17:55:25 +0800
-Subject: [PATCH 058/297] btrfs: deprecate integrity checker feature
+Subject: [PATCH 058/384] btrfs: deprecate integrity checker feature
 
 The integrity checker feature needs to be enabled at compile time
 (BTRFS_FS_CHECK_INTEGRITY) and then enabled by mount options check_int*.

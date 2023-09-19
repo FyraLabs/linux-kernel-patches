@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Filipe Manana <fdmanana@suse.com>
 Date: Wed, 26 Jul 2023 16:57:01 +0100
-Subject: [PATCH 104/297] btrfs: print available space for a block group when
+Subject: [PATCH 104/384] btrfs: print available space for a block group when
  dumping a space info
 
 When dumping a space info, we iterate over all its block groups and then

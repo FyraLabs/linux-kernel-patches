@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Anand Jain <anand.jain@oracle.com>
 Date: Mon, 31 Jul 2023 19:16:36 +0800
-Subject: [PATCH 141/297] btrfs: drop redundant check to use
+Subject: [PATCH 141/384] btrfs: drop redundant check to use
  fs_devices::metadata_uuid
 
 fs_devices::metadata_uuid value is already updated based on the

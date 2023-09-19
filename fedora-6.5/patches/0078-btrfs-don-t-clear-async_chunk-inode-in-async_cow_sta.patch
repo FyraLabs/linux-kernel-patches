@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Christoph Hellwig <hch@lst.de>
 Date: Wed, 28 Jun 2023 17:31:33 +0200
-Subject: [PATCH 078/297] btrfs: don't clear async_chunk->inode in
+Subject: [PATCH 078/384] btrfs: don't clear async_chunk->inode in
  async_cow_start
 
 Now that the ->inode check isn't needed in submit_compressed_extents

@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Christoph Hellwig <hch@lst.de>
 Date: Wed, 28 Jun 2023 17:31:27 +0200
-Subject: [PATCH 072/297] btrfs: reduce debug spam from
+Subject: [PATCH 072/384] btrfs: reduce debug spam from
  submit_compressed_extents
 
 Move the printk that is supposed to help to debug failures in

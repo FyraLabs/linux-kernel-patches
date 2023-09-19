@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Piotr Gorski <lucjan.lucjanov@gmail.com>
 Date: Tue, 29 Aug 2023 12:42:52 +0200
-Subject: [PATCH 039/297] amd-pref-core: Update to v4
+Subject: [PATCH 039/384] amd-pref-core: Update to v4
 
 Signed-off-by: Piotr Gorski <lucjan.lucjanov@gmail.com>
 Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>

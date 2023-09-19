@@ -1,0 +1,110 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Paskal Sitepu <rmnscnce@ya.ru>
+Date: Mon, 18 Sep 2023 16:38:51 +0700
+Subject: [PATCH 294/384] redhat: configs: build additional Microsoft Surface
+ drivers as modules for x86
+
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ redhat/configs/common/generic/CONFIG_HID_IPTS                   | 2 ++
+ redhat/configs/common/generic/CONFIG_HID_ITHC                   | 2 ++
+ redhat/configs/common/generic/CONFIG_LEDS_TPS68470              | 1 +
+ redhat/configs/common/generic/CONFIG_SURFACE_BOOK1_DGPU_SWITCH  | 1 +
+ redhat/configs/common/generic/CONFIG_VIDEO_DW9719               | 1 +
+ redhat/configs/common/generic/x86/CONFIG_HID_IPTS               | 2 ++
+ redhat/configs/common/generic/x86/CONFIG_HID_ITHC               | 2 ++
+ redhat/configs/common/generic/x86/CONFIG_LEDS_TPS68470          | 2 ++
+ .../configs/common/generic/x86/CONFIG_SURFACE_BOOK1_DGPU_SWITCH | 2 ++
+ redhat/configs/common/generic/x86/CONFIG_VIDEO_DW9719           | 2 ++
+ 10 files changed, 17 insertions(+)
+ create mode 100644 redhat/configs/common/generic/CONFIG_HID_IPTS
+ create mode 100644 redhat/configs/common/generic/CONFIG_HID_ITHC
+ create mode 100644 redhat/configs/common/generic/CONFIG_LEDS_TPS68470
+ create mode 100644 redhat/configs/common/generic/CONFIG_SURFACE_BOOK1_DGPU_SWITCH
+ create mode 100644 redhat/configs/common/generic/CONFIG_VIDEO_DW9719
+ create mode 100644 redhat/configs/common/generic/x86/CONFIG_HID_IPTS
+ create mode 100644 redhat/configs/common/generic/x86/CONFIG_HID_ITHC
+ create mode 100644 redhat/configs/common/generic/x86/CONFIG_LEDS_TPS68470
+ create mode 100644 redhat/configs/common/generic/x86/CONFIG_SURFACE_BOOK1_DGPU_SWITCH
+ create mode 100644 redhat/configs/common/generic/x86/CONFIG_VIDEO_DW9719
+
+diff --git a/redhat/configs/common/generic/CONFIG_HID_IPTS b/redhat/configs/common/generic/CONFIG_HID_IPTS
+new file mode 100644
+index 000000000000..6f933ee1ca47
+--- /dev/null
++++ b/redhat/configs/common/generic/CONFIG_HID_IPTS
+@@ -0,0 +1,2 @@
++# CONFIG_HID_IPTS is not set
++
+diff --git a/redhat/configs/common/generic/CONFIG_HID_ITHC b/redhat/configs/common/generic/CONFIG_HID_ITHC
+new file mode 100644
+index 000000000000..57a7d1f430e9
+--- /dev/null
++++ b/redhat/configs/common/generic/CONFIG_HID_ITHC
+@@ -0,0 +1,2 @@
++# CONFIG_HID_ITHC is not set
++
+diff --git a/redhat/configs/common/generic/CONFIG_LEDS_TPS68470 b/redhat/configs/common/generic/CONFIG_LEDS_TPS68470
+new file mode 100644
+index 000000000000..b5fbf28dedce
+--- /dev/null
++++ b/redhat/configs/common/generic/CONFIG_LEDS_TPS68470
+@@ -0,0 +1 @@
++# CONFIG_LEDS_TPS68470 is not set
+diff --git a/redhat/configs/common/generic/CONFIG_SURFACE_BOOK1_DGPU_SWITCH b/redhat/configs/common/generic/CONFIG_SURFACE_BOOK1_DGPU_SWITCH
+new file mode 100644
+index 000000000000..0cbb3441d479
+--- /dev/null
++++ b/redhat/configs/common/generic/CONFIG_SURFACE_BOOK1_DGPU_SWITCH
+@@ -0,0 +1 @@
++# CONFIG_SURFACE_BOOK1_DGPU_SWITCH is not set
+diff --git a/redhat/configs/common/generic/CONFIG_VIDEO_DW9719 b/redhat/configs/common/generic/CONFIG_VIDEO_DW9719
+new file mode 100644
+index 000000000000..e99f54dbfc0d
+--- /dev/null
++++ b/redhat/configs/common/generic/CONFIG_VIDEO_DW9719
+@@ -0,0 +1 @@
++# CONFIG_VIDEO_DW9719 is not set
+diff --git a/redhat/configs/common/generic/x86/CONFIG_HID_IPTS b/redhat/configs/common/generic/x86/CONFIG_HID_IPTS
+new file mode 100644
+index 000000000000..d4281dc4693e
+--- /dev/null
++++ b/redhat/configs/common/generic/x86/CONFIG_HID_IPTS
+@@ -0,0 +1,2 @@
++CONFIG_HID_IPTS=m
++
+diff --git a/redhat/configs/common/generic/x86/CONFIG_HID_ITHC b/redhat/configs/common/generic/x86/CONFIG_HID_ITHC
+new file mode 100644
+index 000000000000..4666f6a00a95
+--- /dev/null
++++ b/redhat/configs/common/generic/x86/CONFIG_HID_ITHC
+@@ -0,0 +1,2 @@
++CONFIG_HID_ITHC=m
++
+diff --git a/redhat/configs/common/generic/x86/CONFIG_LEDS_TPS68470 b/redhat/configs/common/generic/x86/CONFIG_LEDS_TPS68470
+new file mode 100644
+index 000000000000..1c1c9f358768
+--- /dev/null
++++ b/redhat/configs/common/generic/x86/CONFIG_LEDS_TPS68470
+@@ -0,0 +1,2 @@
++CONFIG_LEDS_TPS68470=m
++
+diff --git a/redhat/configs/common/generic/x86/CONFIG_SURFACE_BOOK1_DGPU_SWITCH b/redhat/configs/common/generic/x86/CONFIG_SURFACE_BOOK1_DGPU_SWITCH
+new file mode 100644
+index 000000000000..0ecfc5793651
+--- /dev/null
++++ b/redhat/configs/common/generic/x86/CONFIG_SURFACE_BOOK1_DGPU_SWITCH
+@@ -0,0 +1,2 @@
++CONFIG_SURFACE_BOOK1_DGPU_SWITCH=m
++
+diff --git a/redhat/configs/common/generic/x86/CONFIG_VIDEO_DW9719 b/redhat/configs/common/generic/x86/CONFIG_VIDEO_DW9719
+new file mode 100644
+index 000000000000..22aaf289ea7f
+--- /dev/null
++++ b/redhat/configs/common/generic/x86/CONFIG_VIDEO_DW9719
+@@ -0,0 +1,2 @@
++CONFIG_VIDEO_DW9719=m
++
+-- 
+2.41.0
+

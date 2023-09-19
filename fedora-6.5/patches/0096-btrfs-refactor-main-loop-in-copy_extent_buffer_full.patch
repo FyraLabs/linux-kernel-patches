@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Qu Wenruo <wqu@suse.com>
 Date: Sat, 15 Jul 2023 19:08:31 +0800
-Subject: [PATCH 096/297] btrfs: refactor main loop in
+Subject: [PATCH 096/384] btrfs: refactor main loop in
  copy_extent_buffer_full()
 
 [BACKGROUND]

@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Goldwyn Rodrigues <rgoldwyn@suse.de>
 Date: Fri, 14 Jul 2023 10:18:19 -0500
-Subject: [PATCH 064/297] btrfs: remove duplicate free_async_extent_pages() on
+Subject: [PATCH 064/384] btrfs: remove duplicate free_async_extent_pages() on
  reservation error
 
 While performing compressed writes, if the extent reservation fails, the

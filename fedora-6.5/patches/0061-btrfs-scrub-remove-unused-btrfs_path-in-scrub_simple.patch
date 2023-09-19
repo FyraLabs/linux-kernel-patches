@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Qu Wenruo <wqu@suse.com>
 Date: Wed, 14 Jun 2023 14:39:55 +0800
-Subject: [PATCH 061/297] btrfs: scrub: remove unused btrfs_path in
+Subject: [PATCH 061/384] btrfs: scrub: remove unused btrfs_path in
  scrub_simple_mirror()
 
 The @path in scrub_simple_mirror() is no longer utilized after commit

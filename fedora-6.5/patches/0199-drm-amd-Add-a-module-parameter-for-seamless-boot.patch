@@ -1,0 +1,91 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Mario Limonciello <mario.limonciello@amd.com>
+Date: Wed, 13 Sep 2023 12:14:54 -0500
+Subject: [PATCH 199/384] drm/amd: Add a module parameter for seamless boot
+
+The module parameter can be used to test more easily enabling seamless
+boot support on additional ASICs.
+
+Reviewed-by: Harry Wentland <harry.wentland@amd.com>
+Signed-off-by: Mario Limonciello <mario.limonciello@amd.com>
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ drivers/gpu/drm/amd/amdgpu/amdgpu.h        |  1 +
+ drivers/gpu/drm/amd/amdgpu/amdgpu_device.c | 20 +++++++++++++++++---
+ drivers/gpu/drm/amd/amdgpu/amdgpu_drv.c    |  8 ++++++++
+ 3 files changed, 26 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu.h b/drivers/gpu/drm/amd/amdgpu/amdgpu.h
+index c9cbe2b84e08..57a623c04650 100644
+--- a/drivers/gpu/drm/amd/amdgpu/amdgpu.h
++++ b/drivers/gpu/drm/amd/amdgpu/amdgpu.h
+@@ -244,6 +244,7 @@ extern int amdgpu_num_kcq;
+ #define AMDGPU_VCNFW_LOG_SIZE (32 * 1024)
+ extern int amdgpu_vcnfw_log;
+ extern int amdgpu_sg_display;
++extern int amdgpu_seamless;
+ 
+ extern int amdgpu_user_partt_mode;
+ 
+diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_device.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_device.c
+index 2f83d7d420b1..d65223207970 100644
+--- a/drivers/gpu/drm/amd/amdgpu/amdgpu_device.c
++++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_device.c
+@@ -1496,11 +1496,25 @@ bool amdgpu_sg_display_supported(struct amdgpu_device *adev)
+  */
+ bool amdgpu_device_seamless_boot_supported(struct amdgpu_device *adev)
+ {
++	switch (amdgpu_seamless) {
++	case -1:
++		break;
++	case 1:
++		return true;
++	case 0:
++		return false;
++	default:
++		DRM_ERROR("Invalid value for amdgpu.seamless: %d\n",
++			  amdgpu_seamless);
++		return false;
++	}
++
++	if (adev->mman.keep_stolen_vga_memory)
++		return false;
++
+ 	switch (adev->ip_versions[DCE_HWIP][0]) {
+ 	case IP_VERSION(3, 0, 1):
+-		if (!adev->mman.keep_stolen_vga_memory)
+-			return true;
+-		break;
++		return true;
+ 	default:
+ 		break;
+ 	}
+diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_drv.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_drv.c
+index 6e38a85fee8c..2d1be088b168 100644
+--- a/drivers/gpu/drm/amd/amdgpu/amdgpu_drv.c
++++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_drv.c
+@@ -195,6 +195,7 @@ int amdgpu_use_xgmi_p2p = 1;
+ int amdgpu_vcnfw_log;
+ int amdgpu_sg_display = -1; /* auto */
+ int amdgpu_user_partt_mode = AMDGPU_AUTO_COMPUTE_PARTITION_MODE;
++int amdgpu_seamless = -1; /* auto */
+ 
+ static void amdgpu_drv_delayed_reset_work_handler(struct work_struct *work);
+ 
+@@ -940,6 +941,13 @@ module_param_named(num_kcq, amdgpu_num_kcq, int, 0444);
+ MODULE_PARM_DESC(vcnfw_log, "Enable vcnfw log(0 = disable (default value), 1 = enable)");
+ module_param_named(vcnfw_log, amdgpu_vcnfw_log, int, 0444);
+ 
++/**
++ * DOC: seamless (int)
++ * Seamless boot will keep the image on the screen during the boot process.
++ */
++MODULE_PARM_DESC(seamless, "Seamless boot (-1 = auto (default), 0 = disable, 1 = enable)");
++module_param_named(seamless, amdgpu_seamless, int, 0444);
++
+ /**
+  * DOC: sg_display (int)
+  * Disable S/G (scatter/gather) display (i.e., display from system memory).
+-- 
+2.41.0
+

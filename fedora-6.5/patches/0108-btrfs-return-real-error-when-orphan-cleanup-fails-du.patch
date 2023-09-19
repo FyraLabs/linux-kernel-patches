@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Filipe Manana <fdmanana@suse.com>
 Date: Wed, 26 Jul 2023 16:57:05 +0100
-Subject: [PATCH 108/297] btrfs: return real error when orphan cleanup fails
+Subject: [PATCH 108/384] btrfs: return real error when orphan cleanup fails
  due to a transaction abort
 
 During mount we will call btrfs_orphan_cleanup() to remove any inodes that

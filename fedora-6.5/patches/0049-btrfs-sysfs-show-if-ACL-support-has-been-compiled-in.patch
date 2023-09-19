@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Anand Jain <anand.jain@oracle.com>
 Date: Tue, 20 Jun 2023 16:55:09 +0800
-Subject: [PATCH 049/297] btrfs: sysfs: show if ACL support has been compiled
+Subject: [PATCH 049/384] btrfs: sysfs: show if ACL support has been compiled
  in
 
 ACL support depends on the compile-time configuration option

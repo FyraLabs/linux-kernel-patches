@@ -1,0 +1,43 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Ben Skeggs <bskeggs@redhat.com>
+Date: Tue, 19 Sep 2023 06:21:14 +1000
+Subject: [PATCH 349/384] drm/nouveau/fault/tu102-: prepare for GSP-RM
+
+- disable FAULT completely when GSP-RM detected
+- SVM support will be disabled when running on RM because of this
+
+Signed-off-by: Ben Skeggs <bskeggs@redhat.com>
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ drivers/gpu/drm/nouveau/nvkm/subdev/fault/tu102.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/gpu/drm/nouveau/nvkm/subdev/fault/tu102.c b/drivers/gpu/drm/nouveau/nvkm/subdev/fault/tu102.c
+index 967efaddae28..5390417a58b5 100644
+--- a/drivers/gpu/drm/nouveau/nvkm/subdev/fault/tu102.c
++++ b/drivers/gpu/drm/nouveau/nvkm/subdev/fault/tu102.c
+@@ -22,6 +22,7 @@
+ #include "priv.h"
+ 
+ #include <core/memory.h>
++#include <subdev/gsp.h>
+ #include <subdev/mc.h>
+ #include <subdev/mmu.h>
+ #include <subdev/vfn.h>
+@@ -175,7 +176,12 @@ int
+ tu102_fault_new(struct nvkm_device *device, enum nvkm_subdev_type type, int inst,
+ 		struct nvkm_fault **pfault)
+ {
+-	int ret = nvkm_fault_new_(&tu102_fault, device, type, inst, pfault);
++	int ret;
++
++	if (nvkm_gsp_rm(device->gsp))
++		return -ENODEV;
++
++	ret = nvkm_fault_new_(&tu102_fault, device, type, inst, pfault);
+ 	if (ret)
+ 		return ret;
+ 
+-- 
+2.41.0
+

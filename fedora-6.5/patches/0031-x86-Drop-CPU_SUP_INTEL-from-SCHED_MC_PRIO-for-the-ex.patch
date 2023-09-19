@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Meng Li <li.meng@amd.com>
 Date: Tue, 15 Aug 2023 14:15:40 +0800
-Subject: [PATCH 031/297] x86: Drop CPU_SUP_INTEL from SCHED_MC_PRIO for the
+Subject: [PATCH 031/384] x86: Drop CPU_SUP_INTEL from SCHED_MC_PRIO for the
  expansion.
 
 Drop CPU_SUP_INTE from SCHED_MC_PRIO, and it can be used by X86_AMD_PSTATE.

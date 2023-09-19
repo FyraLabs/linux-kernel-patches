@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Filipe Manana <fdmanana@suse.com>
 Date: Fri, 30 Jun 2023 16:03:51 +0100
-Subject: [PATCH 057/297] btrfs: move btrfs_free_excluded_extents() into
+Subject: [PATCH 057/384] btrfs: move btrfs_free_excluded_extents() into
  block-group.c
 
 The function btrfs_free_excluded_extents() is only used by block-group.c,

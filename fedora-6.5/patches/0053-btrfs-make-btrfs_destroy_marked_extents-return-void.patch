@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Filipe Manana <fdmanana@suse.com>
 Date: Fri, 30 Jun 2023 16:03:47 +0100
-Subject: [PATCH 053/297] btrfs: make btrfs_destroy_marked_extents() return
+Subject: [PATCH 053/384] btrfs: make btrfs_destroy_marked_extents() return
  void
 
 Currently btrfs_destroy_marked_extents() is returning the value of the

@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Anand Jain <anand.jain@oracle.com>
 Date: Mon, 31 Jul 2023 19:16:34 +0800
-Subject: [PATCH 139/297] btrfs: use the correct superblock to compare fsid in
+Subject: [PATCH 139/384] btrfs: use the correct superblock to compare fsid in
  btrfs_validate_super
 
 The function btrfs_validate_super() should verify the fsid in the provided

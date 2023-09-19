@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: "Luke D. Jones" <luke@ljones.dev>
 Date: Wed, 30 Aug 2023 14:08:54 +1200
-Subject: [PATCH 168/297] platform/x86: asus-wmi: corrections to egpu safety
+Subject: [PATCH 168/384] platform/x86: asus-wmi: corrections to egpu safety
  check
 
 An incorrect if statement was preventing the enablement of the egpu.

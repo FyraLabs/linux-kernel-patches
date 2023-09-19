@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Orlando Chamberlain <orlandoch.dev@gmail.com>
 Date: Mon, 30 Jan 2023 18:42:21 +1100
-Subject: [PATCH 193/297] applesmc: battery charge limiter
+Subject: [PATCH 193/384] applesmc: battery charge limiter
 
 Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
 ---

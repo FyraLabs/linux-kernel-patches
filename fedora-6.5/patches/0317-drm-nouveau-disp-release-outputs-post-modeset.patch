@@ -1,0 +1,114 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Ben Skeggs <bskeggs@redhat.com>
+Date: Tue, 19 Sep 2023 06:13:41 +1000
+Subject: [PATCH 317/384] drm/nouveau/disp: release outputs post-modeset
+
+Prior to this commit, KMS would call release() prior to modeset, and the
+second supervisor interrupt would update SOR routing if needed.
+
+Now, KMS will call release() post-modeset and update routing immediately.
+
+- preparation for GSP-RM
+
+Signed-off-by: Ben Skeggs <bskeggs@redhat.com>
+Reviewed-by: Lyude Paul <lyude@redhat.com>
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ drivers/gpu/drm/nouveau/dispnv50/disp.c        | 18 ++++++++----------
+ .../gpu/drm/nouveau/nvkm/engine/disp/outp.c    |  1 +
+ .../gpu/drm/nouveau/nvkm/engine/disp/uoutp.c   |  2 ++
+ 3 files changed, 11 insertions(+), 10 deletions(-)
+
+diff --git a/drivers/gpu/drm/nouveau/dispnv50/disp.c b/drivers/gpu/drm/nouveau/dispnv50/disp.c
+index 146efd7c0e19..999573e81d8e 100644
+--- a/drivers/gpu/drm/nouveau/dispnv50/disp.c
++++ b/drivers/gpu/drm/nouveau/dispnv50/disp.c
+@@ -477,7 +477,6 @@ nv50_dac_atomic_disable(struct drm_encoder *encoder, struct drm_atomic_state *st
+ 
+ 	core->func->dac->ctrl(core, nv_encoder->outp.or.id, ctrl, NULL);
+ 	nv_encoder->crtc = NULL;
+-	nvif_outp_release(&nv_encoder->outp);
+ }
+ 
+ static void
+@@ -1298,6 +1297,11 @@ nv50_mstm_cleanup(struct drm_atomic_state *state,
+ 		}
+ 	}
+ 
++	if (mstm->disabled) {
++		nvif_outp_release(&mstm->outp->outp);
++		mstm->disabled = false;
++	}
++
+ 	mstm->modified = false;
+ }
+ 
+@@ -1332,12 +1336,6 @@ nv50_mstm_prepare(struct drm_atomic_state *state,
+ 				nv50_msto_prepare(state, mst_state, &mstm->mgr, msto);
+ 		}
+ 	}
+-
+-	if (mstm->disabled) {
+-		if (!mstm->links)
+-			nvif_outp_release(&mstm->outp->outp);
+-		mstm->disabled = false;
+-	}
+ }
+ 
+ static struct drm_connector *
+@@ -1580,7 +1578,6 @@ nv50_sor_atomic_disable(struct drm_encoder *encoder, struct drm_atomic_state *st
+ 
+ 	nv_encoder->update(nv_encoder, nv_crtc->index, NULL, 0, 0);
+ 	nv50_audio_disable(encoder, nv_crtc);
+-	nvif_outp_release(&nv_encoder->outp);
+ 	nv_encoder->crtc = NULL;
+ }
+ 
+@@ -1825,7 +1822,6 @@ nv50_pior_atomic_disable(struct drm_encoder *encoder, struct drm_atomic_state *s
+ 
+ 	core->func->pior->ctrl(core, nv_encoder->outp.or.id, ctrl, NULL);
+ 	nv_encoder->crtc = NULL;
+-	nvif_outp_release(&nv_encoder->outp);
+ }
+ 
+ static void
+@@ -1992,8 +1988,10 @@ nv50_disp_atomic_commit_core(struct drm_atomic_state *state, u32 *interlock)
+ 						  nv_encoder->conn, NULL, NULL);
+ 				outp->enabled = outp->disabled = false;
+ 			} else {
+-				if (outp->disabled)
++				if (outp->disabled) {
++					nvif_outp_release(&nv_encoder->outp);
+ 					outp->disabled = false;
++				}
+ 			}
+ 		}
+ 	}
+diff --git a/drivers/gpu/drm/nouveau/nvkm/engine/disp/outp.c b/drivers/gpu/drm/nouveau/nvkm/engine/disp/outp.c
+index b288ea6658da..20a013f1bbba 100644
+--- a/drivers/gpu/drm/nouveau/nvkm/engine/disp/outp.c
++++ b/drivers/gpu/drm/nouveau/nvkm/engine/disp/outp.c
+@@ -238,6 +238,7 @@ void
+ nvkm_outp_release(struct nvkm_outp *outp)
+ {
+ 	nvkm_outp_release_or(outp, NVKM_OUTP_USER);
++	nvkm_outp_route(outp->disp);
+ }
+ 
+ void
+diff --git a/drivers/gpu/drm/nouveau/nvkm/engine/disp/uoutp.c b/drivers/gpu/drm/nouveau/nvkm/engine/disp/uoutp.c
+index ffd174091454..40cbb4ddc037 100644
+--- a/drivers/gpu/drm/nouveau/nvkm/engine/disp/uoutp.c
++++ b/drivers/gpu/drm/nouveau/nvkm/engine/disp/uoutp.c
+@@ -188,6 +188,8 @@ nvkm_uoutp_mthd_release(struct nvkm_outp *outp, void *argv, u32 argc)
+ 
+ 	if (argc != sizeof(args->vn))
+ 		return -ENOSYS;
++	if (!outp->ior)
++		return -EINVAL;
+ 
+ 	nvkm_outp_release(outp);
+ 	return 0;
+-- 
+2.41.0
+

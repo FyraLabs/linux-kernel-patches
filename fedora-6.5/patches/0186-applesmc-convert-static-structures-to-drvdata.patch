@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Paul Pawlowski <paul@mrarm.io>
 Date: Sun, 17 Nov 2019 23:12:55 +0100
-Subject: [PATCH 186/297] applesmc: convert static structures to drvdata
+Subject: [PATCH 186/384] applesmc: convert static structures to drvdata
 
 All static data structures have been moved to an applesmc_device struct,
 which is then associated with the platform device.

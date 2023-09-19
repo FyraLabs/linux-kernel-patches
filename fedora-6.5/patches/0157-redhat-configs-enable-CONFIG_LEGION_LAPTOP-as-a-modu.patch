@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Paskal Sitepu <rmnscnce@ya.ru>
 Date: Fri, 15 Sep 2023 03:06:57 +0700
-Subject: [PATCH 157/297] redhat: configs: enable CONFIG_LEGION_LAPTOP as a
+Subject: [PATCH 157/384] redhat: configs: enable CONFIG_LEGION_LAPTOP as a
  module for all x86 flavors
 
 Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>

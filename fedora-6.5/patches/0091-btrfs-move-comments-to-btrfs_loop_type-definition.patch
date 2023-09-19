@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Josef Bacik <josef@toxicpanda.com>
 Date: Thu, 20 Jul 2023 16:12:15 -0400
-Subject: [PATCH 091/297] btrfs: move comments to btrfs_loop_type definition
+Subject: [PATCH 091/384] btrfs: move comments to btrfs_loop_type definition
 
 Some of these loop types aren't described, and they should be with the
 definitions to make it easier to tell what each of them do.

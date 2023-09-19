@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Filipe Manana <fdmanana@suse.com>
 Date: Wed, 26 Jul 2023 16:57:07 +0100
-Subject: [PATCH 110/297] btrfs: make btrfs_cleanup_fs_roots() static
+Subject: [PATCH 110/384] btrfs: make btrfs_cleanup_fs_roots() static
 
 btrfs_cleanup_fs_roots() is not used outside disk-io.c, so make it static,
 remove its prototype from disk-io.h and move its definition above the

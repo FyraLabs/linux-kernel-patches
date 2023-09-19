@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: "Luke D. Jones" <luke@ljones.dev>
 Date: Sun, 4 Jun 2023 19:37:34 +1200
-Subject: [PATCH 161/297] platform/x86: asus-wmi: support middle fan custom
+Subject: [PATCH 161/384] platform/x86: asus-wmi: support middle fan custom
  curves
 
 Adds support for fan curves defined for the middle fan which

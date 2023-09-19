@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: David Sterba <dsterba@suse.com>
 Date: Thu, 13 Jul 2023 16:10:26 +0200
-Subject: [PATCH 059/297] btrfs: use helper sizeof_field in struct accessors
+Subject: [PATCH 059/384] btrfs: use helper sizeof_field in struct accessors
 
 There's a helper for obtaining size of a struct member, we can use it
 instead of open coding the pointer magic.

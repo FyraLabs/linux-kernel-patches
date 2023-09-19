@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Christoph Hellwig <hch@lst.de>
 Date: Wed, 28 Jun 2023 17:31:22 +0200
-Subject: [PATCH 067/297] btrfs: pass a flags argument to cow_file_range
+Subject: [PATCH 067/384] btrfs: pass a flags argument to cow_file_range
 
 The int used as bool unlock is not a very good way to describe the
 behavior, and the next patch will have to add another behavior modifier.

@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Filipe Manana <fdmanana@suse.com>
 Date: Wed, 26 Jul 2023 16:56:59 +0100
-Subject: [PATCH 102/297] btrfs: print target number of bytes when dumping free
+Subject: [PATCH 102/384] btrfs: print target number of bytes when dumping free
  space
 
 When dumping free space, with btrfs_dump_free_space(), we pass a bytes

@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Josef Bacik <josef@toxicpanda.com>
 Date: Thu, 17 Aug 2023 16:57:33 -0400
-Subject: [PATCH 151/297] btrfs: tests: test invalid splitting when skipping
+Subject: [PATCH 151/384] btrfs: tests: test invalid splitting when skipping
  pinned drop extent_map
 
 This reproduces the bug fixed by "btrfs: fix incorrect splitting in

@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Ronald=20Tschal=C3=A4r?= <ronald@innovation.ch>
 Date: Sat, 27 Feb 2021 17:26:42 -0800
-Subject: [PATCH 179/297] HID: apple-ibridge: Add Apple iBridge HID driver for
+Subject: [PATCH 179/384] HID: apple-ibridge: Add Apple iBridge HID driver for
  T1 chip.
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8

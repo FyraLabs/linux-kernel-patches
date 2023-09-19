@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Qu Wenruo <wqu@suse.com>
 Date: Tue, 27 Jun 2023 15:34:31 +0800
-Subject: [PATCH 047/297] btrfs: add comments for btrfs_map_block()
+Subject: [PATCH 047/384] btrfs: add comments for btrfs_map_block()
 
 The function btrfs_map_block() is a critical part of the btrfs storage
 layer, which handles mapping of logical ranges to physical ranges.

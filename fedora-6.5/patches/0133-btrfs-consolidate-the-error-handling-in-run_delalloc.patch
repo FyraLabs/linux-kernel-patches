@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Christoph Hellwig <hch@lst.de>
 Date: Mon, 24 Jul 2023 07:22:40 -0700
-Subject: [PATCH 133/297] btrfs: consolidate the error handling in
+Subject: [PATCH 133/384] btrfs: consolidate the error handling in
  run_delalloc_nocow
 
 Share the calls to extent_clear_unlock_delalloc for btrfs_path allocation

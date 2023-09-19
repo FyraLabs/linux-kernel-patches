@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Felix Fietkau <nbd@openwrt.org>
 Date: Sat, 5 Dec 2015 15:07:03 +0100
-Subject: [PATCH 001/297] mac80211: ignore AP power level when tx power type is
+Subject: [PATCH 001/384] mac80211: ignore AP power level when tx power type is
  "fixed"
 
 In some cases a user might want to connect to a far away access point,

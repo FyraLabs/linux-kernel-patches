@@ -1,0 +1,49 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Ben Skeggs <bskeggs@redhat.com>
+Date: Tue, 19 Sep 2023 06:13:23 +1000
+Subject: [PATCH 299/384] drm/nouveau/gr/gf100-: lose contents of global
+ ctxbufs across suspend
+
+Some of these buffers are quite large, and there's no need to preserve
+them across suspend.
+
+Mark the contents as lost to speedup suspend/resume.
+
+Signed-off-by: Ben Skeggs <bskeggs@redhat.com>
+Reviewed-by: Lyude Paul <lyude@redhat.com>
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ drivers/gpu/drm/nouveau/nvkm/engine/gr/gf100.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/gpu/drm/nouveau/nvkm/engine/gr/gf100.c b/drivers/gpu/drm/nouveau/nvkm/engine/gr/gf100.c
+index 5f20079c3660..95a1028b7877 100644
+--- a/drivers/gpu/drm/nouveau/nvkm/engine/gr/gf100.c
++++ b/drivers/gpu/drm/nouveau/nvkm/engine/gr/gf100.c
+@@ -2032,18 +2032,18 @@ gf100_gr_oneinit(struct nvkm_gr *base)
+ 	}
+ 
+ 	/* Allocate global context buffers. */
+-	ret = nvkm_memory_new(device, NVKM_MEM_TARGET_INST, gr->func->grctx->pagepool_size,
+-			      0x100, false, &gr->pagepool);
++	ret = nvkm_memory_new(device, NVKM_MEM_TARGET_INST_SR_LOST,
++			      gr->func->grctx->pagepool_size, 0x100, false, &gr->pagepool);
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = nvkm_memory_new(device, NVKM_MEM_TARGET_INST, gr->func->grctx->bundle_size,
++	ret = nvkm_memory_new(device, NVKM_MEM_TARGET_INST_SR_LOST, gr->func->grctx->bundle_size,
+ 			      0x100, false, &gr->bundle_cb);
+ 	if (ret)
+ 		return ret;
+ 
+-	ret = nvkm_memory_new(device, NVKM_MEM_TARGET_INST, gr->func->grctx->attrib_cb_size(gr),
+-			      0x1000, false, &gr->attrib_cb);
++	ret = nvkm_memory_new(device, NVKM_MEM_TARGET_INST_SR_LOST,
++			      gr->func->grctx->attrib_cb_size(gr), 0x1000, false, &gr->attrib_cb);
+ 	if (ret)
+ 		return ret;
+ 
+-- 
+2.41.0
+

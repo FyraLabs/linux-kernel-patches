@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Paskal Sitepu <rmnscnce@ya.ru>
 Date: Fri, 15 Sep 2023 04:02:34 +0700
-Subject: [PATCH 182/297] redhat: configs: enable CONFIG_HID_APPLE_TOUCHBAR as
+Subject: [PATCH 182/384] redhat: configs: enable CONFIG_HID_APPLE_TOUCHBAR as
  a module for all x86 flavors
 
 Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>

@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: John Martens <john.martens4@proton.me>
 Date: Sun, 3 Sep 2023 00:03:07 +0000
-Subject: [PATCH 156/297] Add legion-laptop v0.0.8
+Subject: [PATCH 156/384] Add legion-laptop v0.0.8
 
 Add extra support for Lenovo Legion laptops.
 

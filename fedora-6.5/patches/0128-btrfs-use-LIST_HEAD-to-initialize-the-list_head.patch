@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Ruan Jinjie <ruanjinjie@huawei.com>
 Date: Thu, 10 Aug 2023 11:00:22 +0800
-Subject: [PATCH 128/297] btrfs: use LIST_HEAD() to initialize the list_head
+Subject: [PATCH 128/384] btrfs: use LIST_HEAD() to initialize the list_head
 
 Use LIST_HEAD() to initialize the list_head instead of open-coding it.
 

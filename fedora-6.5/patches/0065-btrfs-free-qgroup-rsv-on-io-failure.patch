@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Boris Burkov <boris@bur.io>
 Date: Fri, 21 Jul 2023 09:02:06 -0700
-Subject: [PATCH 065/297] btrfs: free qgroup rsv on io failure
+Subject: [PATCH 065/384] btrfs: free qgroup rsv on io failure
 
 If we do a write whose bio suffers an error, we will never reclaim the
 qgroup reserved space for it. We allocate the space in the write_iter

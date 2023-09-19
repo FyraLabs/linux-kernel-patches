@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Minjie Du <duminjie@vivo.com>
 Date: Mon, 17 Jul 2023 15:16:22 +0800
-Subject: [PATCH 060/297] btrfs: use folio_next_index() helper in
+Subject: [PATCH 060/384] btrfs: use folio_next_index() helper in
  extent_write_cache_pages
 
 Simplify code pattern of 'folio->index + folio_nr_pages(folio)' by using

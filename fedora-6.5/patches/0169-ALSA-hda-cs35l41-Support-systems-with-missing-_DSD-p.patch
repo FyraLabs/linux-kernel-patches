@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Stefan Binding <sbinding@opensource.cirrus.com>
 Date: Tue, 15 Aug 2023 17:10:33 +0100
-Subject: [PATCH 169/297] ALSA: hda: cs35l41: Support systems with missing _DSD
+Subject: [PATCH 169/384] ALSA: hda: cs35l41: Support systems with missing _DSD
  properties
 
 Some systems using CS35L41 with HDA were released without some

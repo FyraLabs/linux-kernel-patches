@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: David Morley <morleyd@google.com>
 Date: Fri, 14 Jul 2023 11:07:56 -0400
-Subject: [PATCH 020/297] tcp: introduce per-route feature RTAX_FEATURE_ECN_LOW
+Subject: [PATCH 020/384] tcp: introduce per-route feature RTAX_FEATURE_ECN_LOW
 
 Define and implement a new per-route feature, RTAX_FEATURE_ECN_LOW.
 

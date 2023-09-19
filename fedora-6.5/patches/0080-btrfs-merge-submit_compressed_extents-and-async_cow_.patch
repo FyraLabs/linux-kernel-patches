@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Christoph Hellwig <hch@lst.de>
 Date: Wed, 28 Jun 2023 17:31:35 +0200
-Subject: [PATCH 080/297] btrfs: merge submit_compressed_extents and
+Subject: [PATCH 080/384] btrfs: merge submit_compressed_extents and
  async_cow_submit
 
 The code in submit_compressed_extents just loops over the async_extents,

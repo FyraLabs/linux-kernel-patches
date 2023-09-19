@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Paul Pawlowski <paul@mrarm.io>
 Date: Sun, 17 Nov 2019 23:12:08 +0100
-Subject: [PATCH 188/297] applesmc: switch to acpi_device (from platform)
+Subject: [PATCH 188/384] applesmc: switch to acpi_device (from platform)
 
 This change makes the change from platform_device
 to acpi_device. The rationale for this change is

@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Neal Cardwell <ncardwell@google.com>
 Date: Fri, 27 Sep 2019 17:10:26 -0400
-Subject: [PATCH 015/297] net-tcp: re-generalize TSO sizing in TCP CC module
+Subject: [PATCH 015/384] net-tcp: re-generalize TSO sizing in TCP CC module
  API
 
 Reorganize the API for CC modules so that the CC module once again
