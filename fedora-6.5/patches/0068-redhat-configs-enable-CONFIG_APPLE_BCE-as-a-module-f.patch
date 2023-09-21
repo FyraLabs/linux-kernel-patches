@@ -1,0 +1,33 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Paskal Sitepu <rmnscnce@ya.ru>
+Date: Fri, 15 Sep 2023 03:58:16 +0700
+Subject: [PATCH 068/190] redhat: configs: enable CONFIG_APPLE_BCE as a module
+ for all x86 flavors
+
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ redhat/configs/common/generic/CONFIG_APPLE_BCE     | 2 ++
+ redhat/configs/common/generic/x86/CONFIG_APPLE_BCE | 2 ++
+ 2 files changed, 4 insertions(+)
+ create mode 100644 redhat/configs/common/generic/CONFIG_APPLE_BCE
+ create mode 100644 redhat/configs/common/generic/x86/CONFIG_APPLE_BCE
+
+diff --git a/redhat/configs/common/generic/CONFIG_APPLE_BCE b/redhat/configs/common/generic/CONFIG_APPLE_BCE
+new file mode 100644
+index 000000000000..34a359c39340
+--- /dev/null
++++ b/redhat/configs/common/generic/CONFIG_APPLE_BCE
+@@ -0,0 +1,2 @@
++# CONFIG_APPLE_BCE is not set
++
+diff --git a/redhat/configs/common/generic/x86/CONFIG_APPLE_BCE b/redhat/configs/common/generic/x86/CONFIG_APPLE_BCE
+new file mode 100644
+index 000000000000..5400b3c56629
+--- /dev/null
++++ b/redhat/configs/common/generic/x86/CONFIG_APPLE_BCE
+@@ -0,0 +1,2 @@
++CONFIG_APPLE_BCE=m
++
+-- 
+2.41.0
+

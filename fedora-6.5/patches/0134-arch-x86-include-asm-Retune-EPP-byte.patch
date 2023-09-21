@@ -1,0 +1,30 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Paskal Sitepu <rmnscnce@ya.ru>
+Date: Mon, 18 Sep 2023 03:47:11 +0700
+Subject: [PATCH 134/190] arch: x86: include: asm: Retune EPP byte
+
+Taken from [1]
+
+[1]: https://github.com/clearlinux-pkgs/linux/blob/b9925f121fb99c02bdeff88c5ac7b4bc73cb0d6c/epp-retune.patch
+
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ arch/x86/include/asm/msr-index.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/x86/include/asm/msr-index.h b/arch/x86/include/asm/msr-index.h
+index 1d111350197f..532b0aecf6d5 100644
+--- a/arch/x86/include/asm/msr-index.h
++++ b/arch/x86/include/asm/msr-index.h
+@@ -490,7 +490,7 @@
+ #define HWP_MAX_PERF(x) 		((x & 0xff) << 8)
+ #define HWP_DESIRED_PERF(x)		((x & 0xff) << 16)
+ #define HWP_ENERGY_PERF_PREFERENCE(x)	(((unsigned long long) x & 0xff) << 24)
+-#define HWP_EPP_PERFORMANCE		0x00
++#define HWP_EPP_PERFORMANCE		0x01
+ #define HWP_EPP_BALANCE_PERFORMANCE	0x80
+ #define HWP_EPP_BALANCE_POWERSAVE	0xC0
+ #define HWP_EPP_POWERSAVE		0xFF
+-- 
+2.41.0
+

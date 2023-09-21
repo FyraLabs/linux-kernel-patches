@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Neal Cardwell <ncardwell@google.com>
 Date: Tue, 11 Jun 2019 12:26:55 -0400
-Subject: [PATCH 006/384] net-tcp_bbr: broaden app-limited rate sample
+Subject: [PATCH 006/190] net-tcp_bbr: broaden app-limited rate sample
  detection
 
 This commit is a bug fix for the Linux TCP app-limited

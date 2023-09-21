@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Neal Cardwell <ncardwell@google.com>
 Date: Sun, 23 Jul 2023 23:25:34 -0400
-Subject: [PATCH 023/384] tcp: export TCPI_OPT_ECN_LOW in tcp_info tcpi_options
+Subject: [PATCH 023/190] tcp: export TCPI_OPT_ECN_LOW in tcp_info tcpi_options
  field
 
 Analogous to other important ECN information, export TCPI_OPT_ECN_LOW
@@ -29,7 +29,7 @@ index 879eeb0a084b..77270053a5e3 100644
  /*
   * Sender's congestion state indicating normal or abnormal situations
 diff --git a/net/ipv4/tcp.c b/net/ipv4/tcp.c
-index a067cc066a83..0198ac17f3a8 100644
+index 2abbdf4ea719..25136face23c 100644
 --- a/net/ipv4/tcp.c
 +++ b/net/ipv4/tcp.c
 @@ -3779,6 +3779,8 @@ void tcp_get_info(struct sock *sk, struct tcp_info *info)

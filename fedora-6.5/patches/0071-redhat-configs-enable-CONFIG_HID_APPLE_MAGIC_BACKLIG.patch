@@ -1,0 +1,33 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Paskal Sitepu <rmnscnce@ya.ru>
+Date: Fri, 15 Sep 2023 03:59:26 +0700
+Subject: [PATCH 071/190] redhat: configs: enable
+ CONFIG_HID_APPLE_MAGIC_BACKLIGHT as a module for all x86 flavors
+
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ redhat/configs/common/generic/CONFIG_HID_APPLE_MAGIC_BACKLIGHT  | 2 ++
+ .../configs/common/generic/x86/CONFIG_HID_APPLE_MAGIC_BACKLIGHT | 2 ++
+ 2 files changed, 4 insertions(+)
+ create mode 100644 redhat/configs/common/generic/CONFIG_HID_APPLE_MAGIC_BACKLIGHT
+ create mode 100644 redhat/configs/common/generic/x86/CONFIG_HID_APPLE_MAGIC_BACKLIGHT
+
+diff --git a/redhat/configs/common/generic/CONFIG_HID_APPLE_MAGIC_BACKLIGHT b/redhat/configs/common/generic/CONFIG_HID_APPLE_MAGIC_BACKLIGHT
+new file mode 100644
+index 000000000000..eb137af08e7a
+--- /dev/null
++++ b/redhat/configs/common/generic/CONFIG_HID_APPLE_MAGIC_BACKLIGHT
+@@ -0,0 +1,2 @@
++# CONFIG_HID_APPLE_MAGIC_BACKLIGHT is not set
++
+diff --git a/redhat/configs/common/generic/x86/CONFIG_HID_APPLE_MAGIC_BACKLIGHT b/redhat/configs/common/generic/x86/CONFIG_HID_APPLE_MAGIC_BACKLIGHT
+new file mode 100644
+index 000000000000..10a5dd7a30dc
+--- /dev/null
++++ b/redhat/configs/common/generic/x86/CONFIG_HID_APPLE_MAGIC_BACKLIGHT
+@@ -0,0 +1,2 @@
++CONFIG_HID_APPLE_MAGIC_BACKLIGHT=m
++
+-- 
+2.41.0
+

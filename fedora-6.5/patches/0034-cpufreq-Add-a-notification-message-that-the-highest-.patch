@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Meng Li <li.meng@amd.com>
 Date: Tue, 15 Aug 2023 14:15:43 +0800
-Subject: [PATCH 034/384] cpufreq: Add a notification message that the highest
+Subject: [PATCH 034/190] cpufreq: Add a notification message that the highest
  perf has changed
 
 Please refer to the ACPI_Spec for details on the highest

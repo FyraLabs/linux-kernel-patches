@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Neal Cardwell <ncardwell@google.com>
 Date: Wed, 1 May 2019 20:16:25 -0400
-Subject: [PATCH 013/384] net-tcp_bbr: v2: adjust skb tx.in_flight upon split
+Subject: [PATCH 013/190] net-tcp_bbr: v2: adjust skb tx.in_flight upon split
  in tcp_fragment()
 
 When we fragment an skb that has already been sent, we need to update
@@ -57,7 +57,7 @@ index f96fb08bd097..1c6b11c9bd1c 100644
   * handling. SACK is negotiated with the peer, and therefore it can vary
   * between different flows.
 diff --git a/net/ipv4/tcp_output.c b/net/ipv4/tcp_output.c
-index 90a409bc62f7..18ca82b62d1f 100644
+index 52c814b4b63f..c66d6f8b7958 100644
 --- a/net/ipv4/tcp_output.c
 +++ b/net/ipv4/tcp_output.c
 @@ -1532,7 +1532,7 @@ int tcp_fragment(struct sock *sk, enum tcp_queue tcp_queue,

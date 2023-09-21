@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Oleksandr Natalenko <oleksandr@natalenko.name>
 Date: Mon, 10 Jul 2023 10:31:00 +0200
-Subject: [PATCH 043/384] lib/zstd: import v1.5.5
+Subject: [PATCH 043/190] lib/zstd: import v1.5.5
 
 Signed-off-by: Oleksandr Natalenko <oleksandr@natalenko.name>
 Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>

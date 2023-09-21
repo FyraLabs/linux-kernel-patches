@@ -1,0 +1,33 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Paskal Sitepu <rmnscnce@ya.ru>
+Date: Fri, 15 Sep 2023 03:06:57 +0700
+Subject: [PATCH 050/190] redhat: configs: enable CONFIG_LEGION_LAPTOP as a
+ module for all x86 flavors
+
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ redhat/configs/common/generic/CONFIG_LEGION_LAPTOP     | 2 ++
+ redhat/configs/common/generic/x86/CONFIG_LEGION_LAPTOP | 2 ++
+ 2 files changed, 4 insertions(+)
+ create mode 100644 redhat/configs/common/generic/CONFIG_LEGION_LAPTOP
+ create mode 100644 redhat/configs/common/generic/x86/CONFIG_LEGION_LAPTOP
+
+diff --git a/redhat/configs/common/generic/CONFIG_LEGION_LAPTOP b/redhat/configs/common/generic/CONFIG_LEGION_LAPTOP
+new file mode 100644
+index 000000000000..842e17d0e648
+--- /dev/null
++++ b/redhat/configs/common/generic/CONFIG_LEGION_LAPTOP
+@@ -0,0 +1,2 @@
++# CONFIG_LEGION_LAPTOP is not set
++
+diff --git a/redhat/configs/common/generic/x86/CONFIG_LEGION_LAPTOP b/redhat/configs/common/generic/x86/CONFIG_LEGION_LAPTOP
+new file mode 100644
+index 000000000000..e1ab7934ee4c
+--- /dev/null
++++ b/redhat/configs/common/generic/x86/CONFIG_LEGION_LAPTOP
+@@ -0,0 +1,2 @@
++CONFIG_LEGION_LAPTOP=m
++
+-- 
+2.41.0
+

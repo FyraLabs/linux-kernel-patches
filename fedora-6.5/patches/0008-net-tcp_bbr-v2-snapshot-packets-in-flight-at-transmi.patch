@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Neal Cardwell <ncardwell@google.com>
 Date: Sat, 5 Aug 2017 11:49:50 -0400
-Subject: [PATCH 008/384] net-tcp_bbr: v2: snapshot packets in flight at
+Subject: [PATCH 008/190] net-tcp_bbr: v2: snapshot packets in flight at
  transmit time and pass in rate_sample
 
 CC algorithms may want to snapshot the number of packets in flight at
@@ -58,7 +58,7 @@ index 469dc87cf6c4..7aa2c13ed8a8 100644
  void tcp_rate_skb_delivered(struct sock *sk, struct sk_buff *skb,
  			    struct rate_sample *rs);
 diff --git a/net/ipv4/tcp_output.c b/net/ipv4/tcp_output.c
-index 51d8638d4b4c..90a409bc62f7 100644
+index 9f9ca68c4702..52c814b4b63f 100644
 --- a/net/ipv4/tcp_output.c
 +++ b/net/ipv4/tcp_output.c
 @@ -2674,6 +2674,7 @@ static bool tcp_write_xmit(struct sock *sk, unsigned int mss_now, int nonagle,

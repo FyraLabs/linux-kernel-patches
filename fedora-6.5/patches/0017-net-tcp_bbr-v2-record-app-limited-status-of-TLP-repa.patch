@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Jianfeng Wang <jfwang@google.com>
 Date: Fri, 19 Jun 2020 17:33:45 +0000
-Subject: [PATCH 017/384] net-tcp_bbr: v2: record app-limited status of
+Subject: [PATCH 017/190] net-tcp_bbr: v2: record app-limited status of
  TLP-repaired flight
 
 When sending a TLP retransmit, record whether the outstanding flight
@@ -37,7 +37,7 @@ index e8f0713669fe..ae0ee688c3f7 100644
  	u32	chrono_stat[3];	/* Time in jiffies for chrono_stat stats */
  	u8	chrono_type:2,	/* current chronograph type */
 diff --git a/net/ipv4/tcp_output.c b/net/ipv4/tcp_output.c
-index 757dce28bc1a..40e7126ebeef 100644
+index c3458da27956..17071389c0c0 100644
 --- a/net/ipv4/tcp_output.c
 +++ b/net/ipv4/tcp_output.c
 @@ -2910,6 +2910,7 @@ void tcp_send_loss_probe(struct sock *sk)

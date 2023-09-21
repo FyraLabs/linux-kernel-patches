@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Neal Cardwell <ncardwell@google.com>
 Date: Fri, 27 Sep 2019 17:10:26 -0400
-Subject: [PATCH 015/384] net-tcp: re-generalize TSO sizing in TCP CC module
+Subject: [PATCH 015/190] net-tcp: re-generalize TSO sizing in TCP CC module
  API
 
 Reorganize the API for CC modules so that the CC module once again
@@ -102,7 +102,7 @@ index 146792cd26fe..cd31cd8cdc69 100644
  	.set_state	= bbr_set_state,
  };
 diff --git a/net/ipv4/tcp_output.c b/net/ipv4/tcp_output.c
-index 18ca82b62d1f..757dce28bc1a 100644
+index c66d6f8b7958..c3458da27956 100644
 --- a/net/ipv4/tcp_output.c
 +++ b/net/ipv4/tcp_output.c
 @@ -2006,13 +2006,12 @@ static u32 tcp_tso_autosize(const struct sock *sk, unsigned int mss_now,

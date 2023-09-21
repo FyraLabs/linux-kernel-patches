@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: David Morley <morleyd@google.com>
 Date: Fri, 14 Jul 2023 11:07:56 -0400
-Subject: [PATCH 020/384] tcp: introduce per-route feature RTAX_FEATURE_ECN_LOW
+Subject: [PATCH 020/190] tcp: introduce per-route feature RTAX_FEATURE_ECN_LOW
 
 Define and implement a new per-route feature, RTAX_FEATURE_ECN_LOW.
 
@@ -91,7 +91,7 @@ index c8f2aa003387..fdf51e436899 100644
  		const struct tcp_congestion_ops *ca;
  
 diff --git a/net/ipv4/tcp_output.c b/net/ipv4/tcp_output.c
-index 40e7126ebeef..8e81a0b22a5b 100644
+index 17071389c0c0..4b432c594949 100644
 --- a/net/ipv4/tcp_output.c
 +++ b/net/ipv4/tcp_output.c
 @@ -325,10 +325,9 @@ static void tcp_ecn_send_syn(struct sock *sk, struct sk_buff *skb)

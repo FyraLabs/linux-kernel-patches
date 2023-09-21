@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Zebediah Figura <zfigura@codeweavers.com>
 Date: Wed, 28 Sep 2022 03:48:52 +0000
-Subject: [PATCH 026/384] winesync: Introduce the winesync driver and character
+Subject: [PATCH 026/190] winesync: Introduce the winesync driver and character
  device patchset
 
 Signed-off-by: Alexandre Frade <kernel@xanmod.org>

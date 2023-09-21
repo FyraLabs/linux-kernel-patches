@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Neal Cardwell <ncardwell@google.com>
 Date: Mon, 19 Nov 2018 13:48:36 -0500
-Subject: [PATCH 010/384] net-tcp_bbr: v2: export FLAG_ECE in
+Subject: [PATCH 010/190] net-tcp_bbr: v2: export FLAG_ECE in
  rate_sample.is_ece
 
 For understanding the relationship between inflight and ECN signals,

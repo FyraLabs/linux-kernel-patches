@@ -1,0 +1,41 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Mario Limonciello <mario.limonciello@amd.com>
+Date: Wed, 13 Sep 2023 12:14:52 -0500
+Subject: [PATCH 090/190] drm/amd: Drop special case for yellow carp without
+ discovery
+
+`amdgpu_gmc_get_vbios_allocations` has a special case for how to
+bring up yellow carp when amdgpu discovery is turned off. As this ASIC
+ships with discovery turned on, it's generally dead code and worse it
+causes `adev->mman.keep_stolen_vga_memory` to not be initialized for
+yellow carp.
+
+Remove it.
+
+Signed-off-by: Mario Limonciello <mario.limonciello@amd.com>
+Reviewed-by: Alex Deucher <alexander.deucher@amd.com>
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ drivers/gpu/drm/amd/amdgpu/amdgpu_gmc.c | 6 ------
+ 1 file changed, 6 deletions(-)
+
+diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_gmc.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_gmc.c
+index d78bd9732543..cb194c0b1f2d 100644
+--- a/drivers/gpu/drm/amd/amdgpu/amdgpu_gmc.c
++++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_gmc.c
+@@ -721,12 +721,6 @@ void amdgpu_gmc_get_vbios_allocations(struct amdgpu_device *adev)
+ 	case CHIP_RENOIR:
+ 		adev->mman.keep_stolen_vga_memory = true;
+ 		break;
+-	case CHIP_YELLOW_CARP:
+-		if (amdgpu_discovery == 0) {
+-			adev->mman.stolen_reserved_offset = 0x1ffb0000;
+-			adev->mman.stolen_reserved_size = 64 * PAGE_SIZE;
+-		}
+-		break;
+ 	default:
+ 		adev->mman.keep_stolen_vga_memory = false;
+ 		break;
+-- 
+2.41.0
+

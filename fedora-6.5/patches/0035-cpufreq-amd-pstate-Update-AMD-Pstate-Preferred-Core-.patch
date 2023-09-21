@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Meng Li <li.meng@amd.com>
 Date: Tue, 15 Aug 2023 14:15:44 +0800
-Subject: [PATCH 035/384] cpufreq: amd-pstate: Update AMD Pstate Preferred Core
+Subject: [PATCH 035/190] cpufreq: amd-pstate: Update AMD Pstate Preferred Core
  ranking dynamically
 
 Preferred core rankings can be changed dynamically by the

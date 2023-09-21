@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Meng Li <li.meng@amd.com>
 Date: Tue, 15 Aug 2023 14:15:46 +0800
-Subject: [PATCH 037/384] Documentation: introduce AMD Pstate Preferrd Core
+Subject: [PATCH 037/190] Documentation: introduce AMD Pstate Preferrd Core
  mode kernel command line options
 
 AMD Pstate driver support enable/disable Preferred core.

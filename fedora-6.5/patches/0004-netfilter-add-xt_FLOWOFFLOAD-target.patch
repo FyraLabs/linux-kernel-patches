@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Felix Fietkau <nbd@nbd.name>
 Date: Tue, 20 Feb 2018 15:56:02 +0100
-Subject: [PATCH 004/384] netfilter: add xt_FLOWOFFLOAD target
+Subject: [PATCH 004/190] netfilter: add xt_FLOWOFFLOAD target
 
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 Signed-off-by: Alexandre Frade <kernel@xanmod.org>

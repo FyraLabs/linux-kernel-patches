@@ -1,0 +1,55 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Mario Limonciello <mario.limonciello@amd.com>
+Date: Wed, 13 Sep 2023 12:14:55 -0500
+Subject: [PATCH 093/190] drm/amd: Enable seamless boot by default on newer
+ ASICs
+
+Seamless boot can technically be supported as far back as DCN1
+but to avoid regressions on older hardware, enable it for DCN3 and
+later.
+
+If users report using the module parameter that it works on older
+ASICs as well, this can be adjusted.
+
+Signed-off-by: Mario Limonciello <mario.limonciello@amd.com>
+Signed-off-by: Paskal Sitepu <rmnscnce@ya.ru>
+---
+ drivers/gpu/drm/amd/amdgpu/amdgpu_device.c | 15 ++++-----------
+ 1 file changed, 4 insertions(+), 11 deletions(-)
+
+diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_device.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_device.c
+index d65223207970..367d40d43208 100644
+--- a/drivers/gpu/drm/amd/amdgpu/amdgpu_device.c
++++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_device.c
+@@ -1490,9 +1490,9 @@ bool amdgpu_sg_display_supported(struct amdgpu_device *adev)
+ /*
+  * Check whether seamless boot is supported.
+  *
+- * So far we only support seamless boot on select ASICs.
+- * If everything goes well, we may consider expanding
+- * seamless boot to other ASICs.
++ * So far we only support seamless boot on DCE 3.0 or later.
++ * If users report that it works on older ASICS as well, we may
++ * loosen this.
+  */
+ bool amdgpu_device_seamless_boot_supported(struct amdgpu_device *adev)
+ {
+@@ -1512,14 +1512,7 @@ bool amdgpu_device_seamless_boot_supported(struct amdgpu_device *adev)
+ 	if (adev->mman.keep_stolen_vga_memory)
+ 		return false;
+ 
+-	switch (adev->ip_versions[DCE_HWIP][0]) {
+-	case IP_VERSION(3, 0, 1):
+-		return true;
+-	default:
+-		break;
+-	}
+-
+-	return false;
++	return adev->ip_versions[DCE_HWIP][0] > IP_VERSION(3, 0, 0);
+ }
+ 
+ /*
+-- 
+2.41.0
+
